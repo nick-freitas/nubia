@@ -1,2 +1,2 @@
-- name: Nrwl Nx
-  uses: MansaGroup/nrwl-nx-action@v2.0.5
+name: Nrwl Nx
+uses: MansaGroup/nrwl-nx-action@v2.0.5
