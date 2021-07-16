@@ -16,9 +16,21 @@
     "baseUrl": ".",
     "paths": {
       "@nubia/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@nubia/chapter-api-model": ["libs/chapter-api-model/src/index.ts"],
-      "@nubia/gamebook-api-model": ["libs/gamebook-api-model/src/index.ts"],
-      "@nubia/user-api-model": ["libs/user-api-model/src/index.ts"]
+      "@nubia/api-model/chapter-api-model": [
+        "libs/api-model/chapter-api-model/src/index.ts"
+      ],
+      "@nubia/api-model/gamebook-api-model": [
+        "libs/api-model/gamebook-api-model/src/index.ts"
+      ],
+      "@nubia/api-model/progression-api-model": [
+        "libs/api-model/progression-api-model/src/index.ts"
+      ],
+      "@nubia/api-model/user-api-model": [
+        "libs/api-model/user-api-model/src/index.ts"
+      ],
+      "@nubia/data-access/gamebook-data-access": [
+        "libs/data-access/gamebook-data-access/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -13,8 +13,24 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "scope:client-app",
+                "onlyDependOnLibsWithTags": [
+                  "api",
+                  "api-interface",
+                  "data-access"
+                ]
+              },
+              {
+                "sourceTag": "scope:api",
+                "onlyDependOnLibsWithTags": ["api-interface", "api-model"]
+              },
+              {
+                "sourceTag": "scope:data-access",
+                "onlyDependOnLibsWithTags": ["api-interface", "api-model"]
+              },
+              {
+                "sourceTag": "scope:api-model",
+                "onlyDependOnLibsWithTags": ["api-interface", "api-model"]
               }
             ]
           }

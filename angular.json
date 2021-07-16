@@ -8,16 +8,12 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -42,16 +38,12 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/api/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/api"
-          ],
+          "outputs": ["coverage/apps/api"],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -67,59 +59,116 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/api-interfaces/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
           }
         }
       }
     },
-    "chapter-api-model": {
-      "root": "libs/chapter-api-model",
-      "sourceRoot": "libs/chapter-api-model/src",
+    "api-model-chapter-api-model": {
+      "root": "libs/api-model/chapter-api-model",
+      "sourceRoot": "libs/api-model/chapter-api-model/src",
       "projectType": "library",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/chapter-api-model/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/api-model/chapter-api-model/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/chapter-api-model"
-          ],
+          "outputs": ["coverage/libs/api-model/chapter-api-model"],
           "options": {
-            "jestConfig": "libs/chapter-api-model/jest.config.js",
+            "jestConfig": "libs/api-model/chapter-api-model/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "gamebook-api-model": {
-      "root": "libs/gamebook-api-model",
-      "sourceRoot": "libs/gamebook-api-model/src",
+    "api-model-gamebook-api-model": {
+      "root": "libs/api-model/gamebook-api-model",
+      "sourceRoot": "libs/api-model/gamebook-api-model/src",
       "projectType": "library",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/gamebook-api-model/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/api-model/gamebook-api-model/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/gamebook-api-model"
-          ],
+          "outputs": ["coverage/libs/api-model/gamebook-api-model"],
           "options": {
-            "jestConfig": "libs/gamebook-api-model/jest.config.js",
+            "jestConfig": "libs/api-model/gamebook-api-model/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-model-progression-api-model": {
+      "root": "libs/api-model/progression-api-model",
+      "sourceRoot": "libs/api-model/progression-api-model/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api-model/progression-api-model/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api-model/progression-api-model"],
+          "options": {
+            "jestConfig": "libs/api-model/progression-api-model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-model-user-api-model": {
+      "root": "libs/api-model/user-api-model",
+      "sourceRoot": "libs/api-model/user-api-model/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api-model/user-api-model/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api-model/user-api-model"],
+          "options": {
+            "jestConfig": "libs/api-model/user-api-model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data-access-gamebook-data-access": {
+      "projectType": "library",
+      "root": "libs/data-access/gamebook-data-access",
+      "sourceRoot": "libs/data-access/gamebook-data-access/src",
+      "prefix": "nubia",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/gamebook-data-access"],
+          "options": {
+            "jestConfig": "libs/data-access/gamebook-data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/data-access/gamebook-data-access/src/**/*.ts",
+              "libs/data-access/gamebook-data-access/src/**/*.html"
+            ]
           }
         }
       }
@@ -132,9 +181,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/nubia",
             "index": "apps/nubia/src/index.html",
@@ -142,13 +189,8 @@
             "polyfills": "apps/nubia/src/polyfills.ts",
             "tsConfig": "apps/nubia/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/nubia/src/favicon.ico",
-              "apps/nubia/src/assets"
-            ],
-            "styles": [
-              "apps/nubia/src/styles.scss"
-            ],
+            "assets": ["apps/nubia/src/favicon.ico", "apps/nubia/src/assets"],
+            "styles": ["apps/nubia/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -216,9 +258,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/nubia"
-          ],
+          "outputs": ["coverage/apps/nubia"],
           "options": {
             "jestConfig": "apps/nubia/jest.config.js",
             "passWithNoTests": true
@@ -247,9 +287,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/nubia-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/nubia-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -262,9 +300,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/nubia-reader",
             "index": "apps/nubia-reader/src/index.html",
@@ -276,9 +312,7 @@
               "apps/nubia-reader/src/favicon.ico",
               "apps/nubia-reader/src/assets"
             ],
-            "styles": [
-              "apps/nubia-reader/src/styles.scss"
-            ],
+            "styles": ["apps/nubia-reader/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -346,9 +380,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/nubia-reader"
-          ],
+          "outputs": ["coverage/apps/nubia-reader"],
           "options": {
             "jestConfig": "apps/nubia-reader/jest.config.js",
             "passWithNoTests": true
@@ -377,34 +409,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/nubia-reader-e2e/**/*.{js,ts}"
-            ]
-          }
-        }
-      }
-    },
-    "user-api-model": {
-      "root": "libs/user-api-model",
-      "sourceRoot": "libs/user-api-model/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/user-api-model/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/user-api-model"
-          ],
-          "options": {
-            "jestConfig": "libs/user-api-model/jest.config.js",
-            "passWithNoTests": true
+            "lintFilePatterns": ["apps/nubia-reader-e2e/**/*.{js,ts}"]
           }
         }
       }
