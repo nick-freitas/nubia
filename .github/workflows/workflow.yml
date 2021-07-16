@@ -1,2 +1,12 @@
-name: Nrwl Nx
-uses: MansaGroup/nrwl-nx-action@v2.0.5
+name: Nx Affected CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: mansagroup/nrwl-nx-action@v2
+        with:
+          targets: lint,build,deploy
