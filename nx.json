@@ -12,9 +12,12 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "MWNiNDgxYjItZTBlZC00Mjg1LTg1ZTAtZGVhYmMzNzY0ZmU1fHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
       }
     }
   },
@@ -33,12 +36,28 @@
     "api-interfaces": {
       "tags": []
     },
+    "chapter-api-model": {
+      "tags": ["api-model"]
+    },
+    "gamebook-api-model": {
+      "tags": ["api-model"]
+    },
     "nubia": {
       "tags": []
     },
     "nubia-e2e": {
       "tags": [],
       "implicitDependencies": ["nubia"]
+    },
+    "nubia-reader": {
+      "tags": ["reader"]
+    },
+    "nubia-reader-e2e": {
+      "tags": [],
+      "implicitDependencies": ["nubia-reader"]
+    },
+    "user-api-model": {
+      "tags": ["api-model"]
     }
   }
 }

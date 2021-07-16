@@ -8,12 +8,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -38,12 +42,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api"],
+          "outputs": [
+            "coverage/apps/api"
+          ],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -59,7 +67,59 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/api-interfaces/**/*.ts"
+            ]
+          }
+        }
+      }
+    },
+    "chapter-api-model": {
+      "root": "libs/chapter-api-model",
+      "sourceRoot": "libs/chapter-api-model/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/chapter-api-model/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/chapter-api-model"
+          ],
+          "options": {
+            "jestConfig": "libs/chapter-api-model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "gamebook-api-model": {
+      "root": "libs/gamebook-api-model",
+      "sourceRoot": "libs/gamebook-api-model/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/gamebook-api-model/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/gamebook-api-model"
+          ],
+          "options": {
+            "jestConfig": "libs/gamebook-api-model/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -72,7 +132,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/nubia",
             "index": "apps/nubia/src/index.html",
@@ -80,8 +142,13 @@
             "polyfills": "apps/nubia/src/polyfills.ts",
             "tsConfig": "apps/nubia/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/nubia/src/favicon.ico", "apps/nubia/src/assets"],
-            "styles": ["apps/nubia/src/styles.scss"],
+            "assets": [
+              "apps/nubia/src/favicon.ico",
+              "apps/nubia/src/assets"
+            ],
+            "styles": [
+              "apps/nubia/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -149,7 +216,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/nubia"],
+          "outputs": [
+            "coverage/apps/nubia"
+          ],
           "options": {
             "jestConfig": "apps/nubia/jest.config.js",
             "passWithNoTests": true
@@ -178,7 +247,164 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/nubia-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/nubia-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "nubia-reader": {
+      "projectType": "application",
+      "root": "apps/nubia-reader",
+      "sourceRoot": "apps/nubia-reader/src",
+      "prefix": "reader",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/nubia-reader",
+            "index": "apps/nubia-reader/src/index.html",
+            "main": "apps/nubia-reader/src/main.ts",
+            "polyfills": "apps/nubia-reader/src/polyfills.ts",
+            "tsConfig": "apps/nubia-reader/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/nubia-reader/src/favicon.ico",
+              "apps/nubia-reader/src/assets"
+            ],
+            "styles": [
+              "apps/nubia-reader/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/nubia-reader/src/environments/environment.ts",
+                  "with": "apps/nubia-reader/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "nubia-reader:build:production"
+            },
+            "development": {
+              "browserTarget": "nubia-reader:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "apps/nubia-reader/proxy.conf.json"
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "nubia-reader:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/nubia-reader/src/**/*.ts",
+              "apps/nubia-reader/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/nubia-reader"
+          ],
+          "options": {
+            "jestConfig": "apps/nubia-reader/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nubia-reader-e2e": {
+      "root": "apps/nubia-reader-e2e",
+      "sourceRoot": "apps/nubia-reader-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/nubia-reader-e2e/cypress.json",
+            "tsConfig": "apps/nubia-reader-e2e/tsconfig.e2e.json",
+            "devServerTarget": "nubia-reader:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "nubia-reader:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/nubia-reader-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "user-api-model": {
+      "root": "libs/user-api-model",
+      "sourceRoot": "libs/user-api-model/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/user-api-model/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/user-api-model"
+          ],
+          "options": {
+            "jestConfig": "libs/user-api-model/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
