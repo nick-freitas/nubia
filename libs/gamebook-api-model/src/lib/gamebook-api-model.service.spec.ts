@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
-import { PublicUser } from '../../../api-interfaces/src';
-import { UserApiModelModule } from '../../../user-api-model/src';
+import { PublicUser } from '@nubia/api-interfaces';
+import { UserApiModelModule } from '@nubia/user-api-model';
 import { GamebookApiModelService } from './gamebook-api-model.service';
 
 describe('GamebookApiModelService', () => {

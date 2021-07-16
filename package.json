@@ -10,6 +10,7 @@
     "start-api": "nx serve api",
     "build": "nx build",
     "test": "nx test",
+    "test-all": "nx run-many --all --target=test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",

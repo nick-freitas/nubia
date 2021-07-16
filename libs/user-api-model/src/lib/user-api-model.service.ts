@@ -5,6 +5,10 @@ import { UserDB } from './data';
 @Injectable()
 export class UserApiModelService {
   login(username: string, password: string): Promise<void> {
+    if (!username || !password) {
+      throw new Error('Missing username or password');
+    }
+
     throw new Error('Not Yet Implemented');
   }
 
