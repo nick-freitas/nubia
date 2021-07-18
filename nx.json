@@ -31,32 +31,32 @@
   },
   "projects": {
     "api": {
-      "tags": ["type:app"]
+      "tags": ["type:api-app", "scope:api"]
     },
     "api-data-models-chapter": {
-      "tags": ["type:api-data-model"]
+      "tags": ["type:api-data-model", "scope:api"]
     },
     "api-data-models-gamebook": {
-      "tags": ["type:api-data-model"]
+      "tags": ["type:api-data-model", "scope:api"]
     },
     "api-data-models-progression": {
-      "tags": ["type:api-data-model"]
+      "tags": ["type:api-data-model", "scope:api"]
     },
     "api-data-models-user": {
-      "tags": ["type:api-data-model"]
+      "tags": ["type:api-data-model", "scope:api"]
     },
     "nubia-reader": {
-      "tags": ["type:app", "scope:reader"]
+      "tags": ["type:client-app", "scope:reader"]
     },
     "nubia-reader-data-access-gamebook": {
-      "tags": ["scope:data-access"]
+      "tags": ["type:data-access", "scope:reader", "scope:api"]
     },
     "nubia-reader-e2e": {
       "tags": [],
       "implicitDependencies": ["nubia-reader"]
     },
     "shared-api-interfaces": {
-      "tags": ["scope:shared", "type:api-interface"]
+      "tags": ["type:api-interface", "scope:shared"]
     }
   }
 }
