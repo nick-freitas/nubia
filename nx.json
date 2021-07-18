@@ -31,25 +31,19 @@
   },
   "projects": {
     "api": {
-      "tags": ["scope:api-app"]
+      "tags": ["type:app"]
     },
-    "api-interfaces": {
-      "tags": ["scope:api-interface"]
+    "api-data-models-chapter": {
+      "tags": ["type:api-data-model"]
     },
-    "api-model-chapter-api-model": {
-      "tags": ["scope:api-model"]
+    "api-data-models-gamebook": {
+      "tags": ["type:api-data-model"]
     },
-    "api-model-gamebook-api-model": {
-      "tags": ["scope:api-model"]
+    "api-data-models-progression": {
+      "tags": ["type:api-data-model"]
     },
-    "api-model-progression-api-model": {
-      "tags": ["scope:api-model"]
-    },
-    "api-model-user-api-model": {
-      "tags": ["scope:api-model"]
-    },
-    "data-access-gamebook-data-access": {
-      "tags": ["scope:data-access"]
+    "api-data-models-user": {
+      "tags": ["type:api-data-model"]
     },
     "nubia": {
       "tags": []
@@ -59,11 +53,17 @@
       "implicitDependencies": ["nubia"]
     },
     "nubia-reader": {
-      "tags": ["scope:reader", "scope:client-app"]
+      "tags": ["type:app", "scope:reader"]
+    },
+    "nubia-reader-data-access-gamebook": {
+      "tags": ["scope:data-access"]
     },
     "nubia-reader-e2e": {
       "tags": [],
       "implicitDependencies": ["nubia-reader"]
+    },
+    "shared-api-interfaces": {
+      "tags": ["scope:shared", "type:api-interface"]
     }
   }
 }

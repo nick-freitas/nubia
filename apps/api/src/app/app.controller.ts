@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { Gamebook, Message } from '@nubia/api-interfaces';
+import { Gamebook, Message } from '@nubia/shared/api-interfaces';
 import { AppService } from './app.service';
 
 @Controller()

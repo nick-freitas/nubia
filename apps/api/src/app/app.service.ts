@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Gamebook, Message } from '@nubia/api-interfaces';
-import { GamebookApiModelService } from '@nubia/api-model/gamebook-api-model';
+import { Gamebook, Message } from '@nubia/shared/api-interfaces';
+import { GamebookApiModelService } from '@nubia/api/data-models/gamebook';
 
 @Injectable()
 export class AppService {

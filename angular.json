@@ -51,124 +51,86 @@
         }
       }
     },
-    "api-interfaces": {
-      "root": "libs/api-interfaces",
-      "sourceRoot": "libs/api-interfaces/src",
+    "api-data-models-chapter": {
+      "root": "libs/api/data-models/chapter",
+      "sourceRoot": "libs/api/data-models/chapter/src",
       "projectType": "library",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
-          }
-        }
-      }
-    },
-    "api-model-chapter-api-model": {
-      "root": "libs/api-model/chapter-api-model",
-      "sourceRoot": "libs/api-model/chapter-api-model/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/api-model/chapter-api-model/**/*.ts"]
+            "lintFilePatterns": ["libs/api/data-models/chapter/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api-model/chapter-api-model"],
+          "outputs": ["coverage/libs/api/data-models/chapter"],
           "options": {
-            "jestConfig": "libs/api-model/chapter-api-model/jest.config.js",
+            "jestConfig": "libs/api/data-models/chapter/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "api-model-gamebook-api-model": {
-      "root": "libs/api-model/gamebook-api-model",
-      "sourceRoot": "libs/api-model/gamebook-api-model/src",
+    "api-data-models-gamebook": {
+      "root": "libs/api/data-models/gamebook",
+      "sourceRoot": "libs/api/data-models/gamebook/src",
       "projectType": "library",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-model/gamebook-api-model/**/*.ts"]
+            "lintFilePatterns": ["libs/api/data-models/gamebook/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api-model/gamebook-api-model"],
+          "outputs": ["coverage/libs/api/data-models/gamebook"],
           "options": {
-            "jestConfig": "libs/api-model/gamebook-api-model/jest.config.js",
+            "jestConfig": "libs/api/data-models/gamebook/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "api-model-progression-api-model": {
-      "root": "libs/api-model/progression-api-model",
-      "sourceRoot": "libs/api-model/progression-api-model/src",
+    "api-data-models-progression": {
+      "root": "libs/api/data-models/progression",
+      "sourceRoot": "libs/api/data-models/progression/src",
       "projectType": "library",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-model/progression-api-model/**/*.ts"]
+            "lintFilePatterns": ["libs/api/data-models/progression/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api-model/progression-api-model"],
+          "outputs": ["coverage/libs/api/data-models/progression"],
           "options": {
-            "jestConfig": "libs/api-model/progression-api-model/jest.config.js",
+            "jestConfig": "libs/api/data-models/progression/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "api-model-user-api-model": {
-      "root": "libs/api-model/user-api-model",
-      "sourceRoot": "libs/api-model/user-api-model/src",
+    "api-data-models-user": {
+      "root": "libs/api/data-models/user",
+      "sourceRoot": "libs/api/data-models/user/src",
       "projectType": "library",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-model/user-api-model/**/*.ts"]
+            "lintFilePatterns": ["libs/api/data-models/user/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api-model/user-api-model"],
+          "outputs": ["coverage/libs/api/data-models/user"],
           "options": {
-            "jestConfig": "libs/api-model/user-api-model/jest.config.js",
+            "jestConfig": "libs/api/data-models/user/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "data-access-gamebook-data-access": {
-      "projectType": "library",
-      "root": "libs/data-access/gamebook-data-access",
-      "sourceRoot": "libs/data-access/gamebook-data-access/src",
-      "prefix": "nubia",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/data-access/gamebook-data-access"],
-          "options": {
-            "jestConfig": "libs/data-access/gamebook-data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/data-access/gamebook-data-access/src/**/*.ts",
-              "libs/data-access/gamebook-data-access/src/**/*.html"
-            ]
           }
         }
       }
@@ -388,6 +350,31 @@
         }
       }
     },
+    "nubia-reader-data-access-gamebook": {
+      "projectType": "library",
+      "root": "libs/nubia-reader/data-access/gamebook",
+      "sourceRoot": "libs/nubia-reader/data-access/gamebook/src",
+      "prefix": "nubia",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nubia-reader/data-access/gamebook"],
+          "options": {
+            "jestConfig": "libs/nubia-reader/data-access/gamebook/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/data-access/gamebook/src/**/*.ts",
+              "libs/nubia-reader/data-access/gamebook/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "nubia-reader-e2e": {
       "root": "apps/nubia-reader-e2e",
       "sourceRoot": "apps/nubia-reader-e2e/src",
@@ -410,6 +397,19 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/nubia-reader-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared-api-interfaces": {
+      "root": "libs/shared/api-interfaces",
+      "sourceRoot": "libs/shared/api-interfaces/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/api-interfaces/**/*.ts"]
           }
         }
       }

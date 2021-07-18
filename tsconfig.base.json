@@ -15,21 +15,21 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nubia/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@nubia/api-model/chapter-api-model": [
-        "libs/api-model/chapter-api-model/src/index.ts"
+      "@nubia/api/data-models/chapter": [
+        "libs/api/data-models/chapter/src/index.ts"
       ],
-      "@nubia/api-model/gamebook-api-model": [
-        "libs/api-model/gamebook-api-model/src/index.ts"
+      "@nubia/api/data-models/gamebook": [
+        "libs/api/data-models/gamebook/src/index.ts"
       ],
-      "@nubia/api-model/progression-api-model": [
-        "libs/api-model/progression-api-model/src/index.ts"
+      "@nubia/api/data-models/progression": [
+        "libs/api/data-models/progression/src/index.ts"
       ],
-      "@nubia/api-model/user-api-model": [
-        "libs/api-model/user-api-model/src/index.ts"
+      "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
+      "@nubia/nubia-reader/data-access/gamebook": [
+        "libs/nubia-reader/data-access/gamebook/src/index.ts"
       ],
-      "@nubia/data-access/gamebook-data-access": [
-        "libs/data-access/gamebook-data-access/src/index.ts"
+      "@nubia/shared/api-interfaces": [
+        "libs/shared/api-interfaces/src/index.ts"
       ]
     }
   },
