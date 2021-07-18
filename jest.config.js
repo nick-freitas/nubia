@@ -1,6 +1,6 @@
 module.exports = {
   projects: [
-    '<rootDir>/apps/nubia',
+    ,
     '<rootDir>/apps/api',
     '<rootDir>/apps/nubia-reader',
     '<rootDir>/libs/api/data-models/gamebook',

@@ -45,13 +45,6 @@
     "api-data-models-user": {
       "tags": ["type:api-data-model"]
     },
-    "nubia": {
-      "tags": []
-    },
-    "nubia-e2e": {
-      "tags": [],
-      "implicitDependencies": ["nubia"]
-    },
     "nubia-reader": {
       "tags": ["type:app", "scope:reader"]
     },
