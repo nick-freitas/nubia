@@ -15,22 +15,35 @@
               {
                 "sourceTag": "scope:client-app",
                 "onlyDependOnLibsWithTags": [
-                  "api",
-                  "api-interface",
-                  "data-access"
+                  "scope:api",
+                  "scope:api-interface",
+                  "scope:data-access"
                 ]
               },
               {
-                "sourceTag": "scope:api",
-                "onlyDependOnLibsWithTags": ["api-interface", "api-model"]
+                "sourceTag": "scope:api-app",
+                "onlyDependOnLibsWithTags": [
+                  "scope:api-interface",
+                  "scope:api-model"
+                ]
               },
               {
                 "sourceTag": "scope:data-access",
-                "onlyDependOnLibsWithTags": ["api-interface", "api-model"]
+                "onlyDependOnLibsWithTags": [
+                  "scope:api-interface",
+                  "scope:api-model"
+                ]
               },
               {
                 "sourceTag": "scope:api-model",
-                "onlyDependOnLibsWithTags": ["api-interface", "api-model"]
+                "onlyDependOnLibsWithTags": [
+                  "scope:api-interface",
+                  "scope:api-model"
+                ]
+              },
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
               }
             ]
           }

@@ -31,25 +31,25 @@
   },
   "projects": {
     "api": {
-      "tags": ["api"]
+      "tags": ["scope:api-app"]
     },
     "api-interfaces": {
-      "tags": ["api-interface"]
+      "tags": ["scope:api-interface"]
     },
     "api-model-chapter-api-model": {
-      "tags": ["api-model"]
+      "tags": ["scope:api-model"]
     },
     "api-model-gamebook-api-model": {
-      "tags": ["api-model"]
+      "tags": ["scope:api-model"]
     },
     "api-model-progression-api-model": {
-      "tags": ["api-model"]
+      "tags": ["scope:api-model"]
     },
     "api-model-user-api-model": {
-      "tags": ["api-model"]
+      "tags": ["scope:api-model"]
     },
     "data-access-gamebook-data-access": {
-      "tags": ["data-access"]
+      "tags": ["scope:data-access"]
     },
     "nubia": {
       "tags": []
@@ -59,7 +59,7 @@
       "implicitDependencies": ["nubia"]
     },
     "nubia-reader": {
-      "tags": ["reader", "client-app"]
+      "tags": ["scope:reader", "scope:client-app"]
     },
     "nubia-reader-e2e": {
       "tags": [],

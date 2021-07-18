@@ -1,7 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-
-import { Message } from '@nubia/api-interfaces';
-
+import { Gamebook, Message } from '@nubia/api-interfaces';
 import { AppService } from './app.service';
 
 @Controller()
@@ -11,5 +9,11 @@ export class AppController {
   @Get('hello')
   getData(): Message {
     return this.appService.getData();
+  }
+
+  @Get('library/gamebooks')
+  async getLibraryGamebook(): Promise<Array<Gamebook>> {
+    const userId = '1';
+    return this.appService.getLibraryGamebook(userId);
   }
 }

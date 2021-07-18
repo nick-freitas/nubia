@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { GamebookApiModelService } from './gamebook-api-model.service';
-import { UserApiModelModule } from '@nubia/user-api-model';
+import { UserApiModelModule } from '@nubia/api-model/user-api-model';
 
 @Module({
   controllers: [],
