@@ -55,6 +55,9 @@
     "nubia-reader-shared-data-access": {
       "tags": ["type:data-access", "scope:reader", "scope:api"]
     },
+    "nubia-reader-shared-tokens": {
+      "tags": []
+    },
     "nubia-reader-shell": {
       "tags": ["type:shell", "scope:nubia-reader"]
     },

@@ -28,6 +28,9 @@
       "@nubia/nubia-reader/shared/data-access": [
         "libs/nubia-reader/shared/data-access/src/index.ts"
       ],
+      "@nubia/nubia-reader/shared/tokens": [
+        "libs/nubia-reader/shared/tokens/src/index.ts"
+      ],
       "@nubia/nubia-reader/shell": ["libs/nubia-reader/shell/src/index.ts"],
       "@nubia/shared/api-interfaces": [
         "libs/shared/api-interfaces/src/index.ts"

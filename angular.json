@@ -283,6 +283,19 @@
         }
       }
     },
+    "nubia-reader-shared-tokens": {
+      "root": "libs/nubia-reader/shared/tokens",
+      "sourceRoot": "libs/nubia-reader/shared/tokens/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/nubia-reader/shared/tokens/**/*.ts"]
+          }
+        }
+      }
+    },
     "nubia-reader-shell": {
       "projectType": "library",
       "root": "libs/nubia-reader/shell",
