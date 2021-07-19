@@ -1,4 +1,4 @@
-{{ title }}
+<p>home works!</p>
 <section *ngIf="this.gamebooks$ | async as gamebooks; else noData">
   <ul>
     <li *ngFor="let gb of gamebooks">
@@ -7,4 +7,4 @@
   </ul>
 </section>
 
-<ng-template #noData> No GB data </ng-template>
+<ng-template #noData> No gamebooks </ng-template>

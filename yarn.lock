@@ -1546,7 +1546,7 @@
   dependencies:
     tslib "^2.0.0"
 
-"@ngrx/entity@^12.0.0":
+"@ngrx/entity@^12.2.0":
   version "12.2.0"
   resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-12.2.0.tgz#304ba81e594096150e67c1bcf449927f3110d414"
   integrity sha512-/J/TRF8I3veWpzKGaTGj7bWzvrL96ATK5Ye7GcIUU/4p8j7uHfdUgn8N5yfWp1Sch+lConh/YPc30bcAPAXqaA==

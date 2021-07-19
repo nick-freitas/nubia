@@ -258,6 +258,31 @@
         }
       }
     },
+    "nubia-reader-home": {
+      "projectType": "library",
+      "root": "libs/nubia-reader/home",
+      "sourceRoot": "libs/nubia-reader/home/src",
+      "prefix": "nubia",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nubia-reader/home"],
+          "options": {
+            "jestConfig": "libs/nubia-reader/home/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/home/src/**/*.ts",
+              "libs/nubia-reader/home/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "nubia-reader-shared-data-access": {
       "projectType": "library",
       "root": "libs/nubia-reader/shared/data-access",

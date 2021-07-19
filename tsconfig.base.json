@@ -25,6 +25,7 @@
         "libs/api/data-models/progression/src/index.ts"
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
+      "@nubia/nubia-reader/home": ["libs/nubia-reader/home/src/index.ts"],
       "@nubia/nubia-reader/shared/data-access": [
         "libs/nubia-reader/shared/data-access/src/index.ts"
       ],

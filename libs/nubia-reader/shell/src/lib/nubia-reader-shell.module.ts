@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
+import { ExtraOptions, RouterModule } from '@angular/router';
 import { GamebookDataAccessModule } from '@nubia/nubia-reader/shared/data-access';
+import { nubiaReaderShellRoutes } from './routes';
 
-export const nubiaReaderShellRoutes: Route[] = [];
+const routerOptions: ExtraOptions = {
+  enableTracing: true,
+  initialNavigation: 'enabledBlocking',
+  scrollPositionRestoration: 'top',
+};
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
+    RouterModule.forRoot(nubiaReaderShellRoutes, routerOptions),
     GamebookDataAccessModule,
   ],
+  exports: [RouterModule],
 })
 export class NubiaReaderShellModule {}
