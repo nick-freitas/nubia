@@ -55,7 +55,7 @@
     "nubia-reader-home": {
       "tags": ["scope:reader"]
     },
-    "nubia-reader-shared-data-access-gamebook": {
+    "nubia-reader-shared-data-access-library": {
       "tags": ["type:data-access", "scope:reader", "scope:api"]
     },
     "nubia-reader-shared-tokens": {

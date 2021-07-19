@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { GamebookDataAccessService } from '@nubia/nubia-reader/shared/data-access/gamebook';
+import { LibraryDataAccessService } from '@nubia/nubia-reader/shared/data-access/library';
 import { Gamebook } from '@nubia/shared/api-interfaces';
 import { Observable } from 'rxjs';
 
@@ -9,10 +9,14 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  gamebooks$: Observable<Gamebook[]> | undefined;
-  constructor(private gamebookDataAccessService: GamebookDataAccessService) {}
+  gamebooks$: Observable<Gamebook[]>;
+  loading$: Observable<boolean>;
+  constructor(private gamebookDataAccessService: LibraryDataAccessService) {
+    this.gamebooks$ = this.gamebookDataAccessService.entities$;
+    this.loading$ = this.gamebookDataAccessService.loading$;
+  }
 
   ngOnInit() {
-    this.gamebooks$ = this.gamebookDataAccessService.getLibraryGamebooks();
+    this.gamebookDataAccessService.getLibrary();
   }
 }

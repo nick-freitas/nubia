@@ -1,10 +1,19 @@
 <p>home works!</p>
-<section *ngIf="this.gamebooks$ | async as gamebooks; else noData">
-  <ul>
-    <li *ngFor="let gb of gamebooks">
-      {{ gb | json }}
-    </li>
-  </ul>
-</section>
 
-<ng-template #noData> No gamebooks </ng-template>
+<ng-container
+  *ngIf="loading$ | async; then loading; else loaded"
+></ng-container>
+
+<ng-template #loading> Loading... </ng-template>
+
+<ng-template #loaded>
+  <section *ngIf="this.gamebooks$ | async as gamebooks; else noData">
+    <ul>
+      <li *ngFor="let gb of gamebooks">
+        {{ gb | json }}
+      </li>
+    </ul>
+  </section>
+
+  <ng-template #noData> No gamebooks </ng-template>
+</ng-template>
