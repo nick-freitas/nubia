@@ -25,9 +25,10 @@
         "libs/api/data-models/progression/src/index.ts"
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
-      "@nubia/nubia-reader/data-access/gamebook": [
-        "libs/nubia-reader/data-access/gamebook/src/index.ts"
+      "@nubia/nubia-reader/shared/data-access": [
+        "libs/nubia-reader/shared/data-access/src/index.ts"
       ],
+      "@nubia/nubia-reader/shell": ["libs/nubia-reader/shell/src/index.ts"],
       "@nubia/shared/api-interfaces": [
         "libs/shared/api-interfaces/src/index.ts"
       ]

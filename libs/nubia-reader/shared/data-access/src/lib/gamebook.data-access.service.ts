@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class GamebookService {
+export class GamebookDataAccessService {
   constructor(private http: HttpClient) {}
 
   getLibraryGamebooks(): Observable<Array<Gamebook>> {

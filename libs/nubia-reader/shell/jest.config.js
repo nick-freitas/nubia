@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'nubia-reader-data-access-gamebook',
-  preset: '../../../../jest.preset.js',
+  displayName: 'nubia-reader-shell',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,8 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory:
-    '../../../../coverage/libs/nubia-reader/data-access/gamebook',
+  coverageDirectory: '../../../coverage/libs/nubia-reader/shell',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

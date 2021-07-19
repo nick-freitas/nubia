@@ -7,6 +7,7 @@ module.exports = {
     '<rootDir>/libs/api/data-models/user',
     '<rootDir>/libs/api/data-models/chapter',
     '<rootDir>/libs/api/data-models/progression',
-    '<rootDir>/libs/nubia-reader/data-access/gamebook',
+    '<rootDir>/libs/nubia-reader/shared/data-access',
+    '<rootDir>/libs/nubia-reader/shell',
   ],
 };

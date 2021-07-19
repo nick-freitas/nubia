@@ -1,16 +1,15 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-
-import { GamebookService } from './gamebook.service';
+import { GamebookDataAccessService } from './gamebook.data-access.service';
 
 describe('GamebookService', () => {
-  let service: GamebookService;
+  let service: GamebookDataAccessService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
     });
-    service = TestBed.inject(GamebookService);
+    service = TestBed.inject(GamebookDataAccessService);
   });
 
   it('should be created', () => {
