@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'nubia-reader-shared-data-access',
-  preset: '../../../../jest.preset.js',
+  displayName: 'nubia-reader-shared-data-access-gamebook',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -9,7 +9,7 @@ module.exports = {
     },
   },
   coverageDirectory:
-    '../../../../coverage/libs/nubia-reader/shared/data-access',
+    '../../../../../coverage/libs/nubia-reader/shared/data-access/gamebook',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

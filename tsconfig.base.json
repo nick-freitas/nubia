@@ -26,8 +26,8 @@
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
       "@nubia/nubia-reader/home": ["libs/nubia-reader/home/src/index.ts"],
-      "@nubia/nubia-reader/shared/data-access": [
-        "libs/nubia-reader/shared/data-access/src/index.ts"
+      "@nubia/nubia-reader/shared/data-access/gamebook": [
+        "libs/nubia-reader/shared/data-access/gamebook/src/index.ts"
       ],
       "@nubia/nubia-reader/shared/tokens": [
         "libs/nubia-reader/shared/tokens/src/index.ts"

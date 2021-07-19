@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { GamebookDataAccessService } from '@nubia/nubia-reader/shared/data-access';
+import { GamebookDataAccessService } from '@nubia/nubia-reader/shared/data-access/gamebook';
 import { Gamebook } from '@nubia/shared/api-interfaces';
 import { Observable } from 'rxjs';
 

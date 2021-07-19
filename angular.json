@@ -283,17 +283,17 @@
         }
       }
     },
-    "nubia-reader-shared-data-access": {
+    "nubia-reader-shared-data-access-gamebook": {
       "projectType": "library",
-      "root": "libs/nubia-reader/shared/data-access",
-      "sourceRoot": "libs/nubia-reader/shared/data-access/src",
+      "root": "libs/nubia-reader/shared/data-access/gamebook",
+      "sourceRoot": "libs/nubia-reader/shared/data-access/gamebook/src",
       "prefix": "nubia",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/nubia-reader/shared/data-access"],
+          "outputs": ["coverage/libs/nubia-reader/shared/data-access/gamebook"],
           "options": {
-            "jestConfig": "libs/nubia-reader/shared/data-access/jest.config.js",
+            "jestConfig": "libs/nubia-reader/shared/data-access/gamebook/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -301,8 +301,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/nubia-reader/shared/data-access/src/**/*.ts",
-              "libs/nubia-reader/shared/data-access/src/**/*.html"
+              "libs/nubia-reader/shared/data-access/gamebook/src/**/*.ts",
+              "libs/nubia-reader/shared/data-access/gamebook/src/**/*.html"
             ]
           }
         }
