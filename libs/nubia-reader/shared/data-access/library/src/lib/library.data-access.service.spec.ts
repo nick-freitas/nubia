@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { LibraryDataAccessService } from './gamebook.data-access.service';
+import { LibraryDataAccessService } from './library.data-access.service';
 
 describe('LibraryService', () => {
   let service: LibraryDataAccessService;
