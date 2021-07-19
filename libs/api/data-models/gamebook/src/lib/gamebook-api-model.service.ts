@@ -22,7 +22,26 @@ export class GamebookApiModelService {
   }
 
   public async getByAuthorId(authorId: string): Promise<Gamebook[]> {
-    const gb = GamebookDB.filter((gb) => gb.authorId === authorId);
+    let gb = GamebookDB.filter((gb) => gb.authorId === authorId);
+    const authorIds = [];
+    gb.forEach((gb) => {
+      if (!authorIds.includes(gb.authorId)) {
+        authorIds.push(gb.authorId);
+      }
+    });
+
+    console.log(authorIds);
+
+    const authors = await Promise.all(
+      authorIds.map((aid) => this.userApiModelService.getPublicUserInfo(aid))
+    );
+
+    gb = gb.map((gb) => ({
+      ...gb,
+      author: authors.find((a) => a.id === gb.authorId),
+    }));
+
+    console.log(gb);
     return gb;
   }
 }
