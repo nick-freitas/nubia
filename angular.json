@@ -145,6 +145,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
+            "statsJson": true,
             "outputPath": "dist/apps/nubia-reader",
             "index": "apps/nubia-reader/src/index.html",
             "main": "apps/nubia-reader/src/main.ts",
@@ -163,8 +164,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "8mb"
                 },
                 {
                   "type": "anyComponentStyle",
