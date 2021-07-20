@@ -7,5 +7,6 @@ export interface Gamebook {
   description?: string;
   authorId: string;
   author?: PublicUser;
+  imageSrc?: string;
   chapters?: Chapter[];
 }

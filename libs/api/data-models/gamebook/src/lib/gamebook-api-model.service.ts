@@ -30,8 +30,6 @@ export class GamebookApiModelService {
       }
     });
 
-    console.log(authorIds);
-
     const authors = await Promise.all(
       authorIds.map((aid) => this.userApiModelService.getPublicUserInfo(aid))
     );
@@ -41,7 +39,6 @@ export class GamebookApiModelService {
       author: authors.find((a) => a.id === gb.authorId),
     }));
 
-    console.log(gb);
     return gb;
   }
 }

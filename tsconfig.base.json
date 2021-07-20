@@ -26,11 +26,15 @@
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
       "@nubia/nubia-reader/home": ["libs/nubia-reader/home/src/index.ts"],
+      "@nubia/nubia-reader/reading": ["libs/nubia-reader/reading/src/index.ts"],
       "@nubia/nubia-reader/shared/data-access/library": [
         "libs/nubia-reader/shared/data-access/library/src/index.ts"
       ],
       "@nubia/nubia-reader/shared/tokens": [
         "libs/nubia-reader/shared/tokens/src/index.ts"
+      ],
+      "@nubia/nubia-reader/shared/ui": [
+        "libs/nubia-reader/shared/ui/src/index.ts"
       ],
       "@nubia/nubia-reader/shell": ["libs/nubia-reader/shell/src/index.ts"],
       "@nubia/shared/api-interfaces": [

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { HeaderModule } from '@nubia/nubia-reader/shared/ui';
 import { BookShelfComponent } from './book-shelf/book-shelf.component';
+import { BookShelfBookComponent } from './book-shelf-book/book-shelf-book.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { BookShelfComponent } from './book-shelf/book-shelf.component';
     ]),
     HeaderModule,
   ],
-  declarations: [HomeComponent, BookShelfComponent],
+  declarations: [HomeComponent, BookShelfComponent, BookShelfBookComponent],
 })
 export class NubiaReaderHomeModule {}

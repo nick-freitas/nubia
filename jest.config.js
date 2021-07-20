@@ -10,5 +10,7 @@ module.exports = {
     '<rootDir>/libs/nubia-reader/shared/data-access/library',
     '<rootDir>/libs/nubia-reader/shell',
     '<rootDir>/libs/nubia-reader/home',
+    '<rootDir>/libs/nubia-reader/shared/ui',
+    '<rootDir>/libs/nubia-reader/reading',
   ],
 };

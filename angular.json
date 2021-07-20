@@ -283,6 +283,31 @@
         }
       }
     },
+    "nubia-reader-reading": {
+      "projectType": "library",
+      "root": "libs/nubia-reader/reading",
+      "sourceRoot": "libs/nubia-reader/reading/src",
+      "prefix": "nubia",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nubia-reader/reading"],
+          "options": {
+            "jestConfig": "libs/nubia-reader/reading/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/reading/src/**/*.ts",
+              "libs/nubia-reader/reading/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "nubia-reader-shared-data-access-library": {
       "projectType": "library",
       "root": "libs/nubia-reader/shared/data-access/library",
@@ -317,6 +342,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/nubia-reader/shared/tokens/**/*.ts"]
+          }
+        }
+      }
+    },
+    "nubia-reader-shared-ui": {
+      "root": "libs/nubia-reader/shared/ui",
+      "sourceRoot": "libs/nubia-reader/shared/ui/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/nubia-reader/shared/ui/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nubia-reader/shared/ui"],
+          "options": {
+            "jestConfig": "libs/nubia-reader/shared/ui/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

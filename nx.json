@@ -55,10 +55,16 @@
     "nubia-reader-home": {
       "tags": ["scope:reader"]
     },
+    "nubia-reader-reading": {
+      "tags": ["scope:reader"]
+    },
     "nubia-reader-shared-data-access-library": {
       "tags": ["type:data-access", "scope:reader", "scope:api"]
     },
     "nubia-reader-shared-tokens": {
+      "tags": []
+    },
+    "nubia-reader-shared-ui": {
       "tags": []
     },
     "nubia-reader-shell": {
