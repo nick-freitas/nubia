@@ -11,6 +11,7 @@
     "build": "nx build",
     "test": "nx test",
     "test-all": "nx run-many --all --target=test",
+    "test-all-failed": "nx run-many --all --target=test --only-failed",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",

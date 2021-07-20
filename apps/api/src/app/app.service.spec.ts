@@ -14,11 +14,7 @@ describe('AppService', () => {
     service = app.get<AppService>(AppService);
   });
 
-  describe('getData', () => {
-    it('should return "Welcome to api!"', () => {
-      expect(service.getData()).toEqual({ message: 'Welcome to api!' });
-    });
-
+  describe('AppService', () => {
     it('gets the gamebooks when calling library', async () => {
       const userId = '1';
       const library = await service.getLibraryGamebook(userId);

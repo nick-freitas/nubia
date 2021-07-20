@@ -31,5 +31,6 @@ const defaultDataServiceConfig = (ApiUrlInjectionToken: string) => {
       deps: [ApiUrlInjectionToken],
     },
   ],
+  exports: [EntityDataModule],
 })
 export class LibraryDataAccessModule {}
