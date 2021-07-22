@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { LibraryDataAccessService } from '@nubia/nubia-reader/shared/data-access/library';
+import { LibraryDataAccessService } from '@nubia/nubia-reader/shared/data-access/gamebook-library';
 import { Gamebook } from '@nubia/shared/api-interfaces';
 import { Observable } from 'rxjs';
 
@@ -13,12 +13,12 @@ export class BookShelfComponent implements OnInit {
   gamebooks$: Observable<Gamebook[]>;
   loading$: Observable<boolean>;
 
-  constructor(private gamebookDataAccessService: LibraryDataAccessService) {
-    this.gamebooks$ = this.gamebookDataAccessService.entities$;
-    this.loading$ = this.gamebookDataAccessService.loading$;
+  constructor(private libraryDataAccessService: LibraryDataAccessService) {
+    this.gamebooks$ = this.libraryDataAccessService.entities$;
+    this.loading$ = this.libraryDataAccessService.loading$;
   }
 
   ngOnInit() {
-    this.gamebookDataAccessService.getLibrary();
+    this.libraryDataAccessService.getLibrary();
   }
 }

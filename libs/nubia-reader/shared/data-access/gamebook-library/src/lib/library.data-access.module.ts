@@ -10,11 +10,13 @@ import { entityMetadata } from './library-store.meta';
 
 const defaultDataServiceConfig = (ApiUrlInjectionToken: string) => {
   return {
-    root: `${ApiUrlInjectionToken}/library`,
+    root: `${ApiUrlInjectionToken}/gamebook-library`,
     timeout: 3000, // request timeout
   };
 };
 
+// todo: how to use a module in 2 seperate modules in the same layer
+// todo: *** OR how to import and "re-import" in child modules ***
 @NgModule({
   imports: [
     CommonModule,

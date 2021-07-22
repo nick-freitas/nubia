@@ -39,6 +39,9 @@
     "api-data-models-gamebook": {
       "tags": ["type:api-data-model", "scope:api"]
     },
+    "api-data-models-gamebook-library": {
+      "tags": []
+    },
     "api-data-models-progression": {
       "tags": ["type:api-data-model", "scope:api"]
     },
@@ -58,7 +61,7 @@
     "nubia-reader-reading": {
       "tags": ["scope:reader"]
     },
-    "nubia-reader-shared-data-access-library": {
+    "nubia-reader-shared-data-access-gamebook-library": {
       "tags": ["type:data-access", "scope:reader", "scope:api"]
     },
     "nubia-reader-shared-tokens": {

@@ -21,14 +21,17 @@
       "@nubia/api/data-models/gamebook": [
         "libs/api/data-models/gamebook/src/index.ts"
       ],
+      "@nubia/api/data-models/gamebook-library": [
+        "libs/api/data-models/gamebook-library/src/index.ts"
+      ],
       "@nubia/api/data-models/progression": [
         "libs/api/data-models/progression/src/index.ts"
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
       "@nubia/nubia-reader/home": ["libs/nubia-reader/home/src/index.ts"],
       "@nubia/nubia-reader/reading": ["libs/nubia-reader/reading/src/index.ts"],
-      "@nubia/nubia-reader/shared/data-access/library": [
-        "libs/nubia-reader/shared/data-access/library/src/index.ts"
+      "@nubia/nubia-reader/shared/data-access/gamebook-library": [
+        "libs/nubia-reader/shared/data-access/gamebook-library/src/index.ts"
       ],
       "@nubia/nubia-reader/shared/tokens": [
         "libs/nubia-reader/shared/tokens/src/index.ts"

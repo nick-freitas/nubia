@@ -7,10 +7,11 @@ module.exports = {
     '<rootDir>/libs/api/data-models/user',
     '<rootDir>/libs/api/data-models/chapter',
     '<rootDir>/libs/api/data-models/progression',
-    '<rootDir>/libs/nubia-reader/shared/data-access/library',
+    '<rootDir>/libs/nubia-reader/shared/data-access/gamebook-library',
     '<rootDir>/libs/nubia-reader/shell',
     '<rootDir>/libs/nubia-reader/home',
     '<rootDir>/libs/nubia-reader/shared/ui',
     '<rootDir>/libs/nubia-reader/reading',
+    '<rootDir>/libs/api/data-models/gamebook-library',
   ],
 };

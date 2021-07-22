@@ -1,4 +1,7 @@
-<div class="flex flex-col items-center">
+<div
+  class="flex flex-col items-center hover:cursor-pointer"
+  [routerLink]="['/read', book?.id]"
+>
   <img [src]="book?.imageSrc" [alt]="" width="250" height="300" />
   <span class="text-lg">{{ book?.title }}</span>
   <span class="text-base">{{ book?.author?.name }}</span>

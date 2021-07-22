@@ -17,4 +17,8 @@ export class LibraryDataAccessService extends EntityCollectionServiceBase<Gamebo
   getLibrary(): Observable<Array<Gamebook>> {
     return this.getAll();
   }
+
+  getById(id: string): Observable<Gamebook> {
+    return this.getByKey(id);
+  }
 }
