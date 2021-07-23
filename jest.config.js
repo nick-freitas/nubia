@@ -13,5 +13,6 @@ module.exports = {
     '<rootDir>/libs/nubia-reader/shared/ui',
     '<rootDir>/libs/nubia-reader/reading',
     '<rootDir>/libs/api/data-models/gamebook-library',
+    '<rootDir>/libs/nubia-reader/gamebook-library-store',
   ],
 };

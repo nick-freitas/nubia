@@ -28,6 +28,9 @@
         "libs/api/data-models/progression/src/index.ts"
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
+      "@nubia/nubia-reader/gamebook-library-store": [
+        "libs/nubia-reader/gamebook-library-store/src/index.ts"
+      ],
       "@nubia/nubia-reader/home": ["libs/nubia-reader/home/src/index.ts"],
       "@nubia/nubia-reader/reading": ["libs/nubia-reader/reading/src/index.ts"],
       "@nubia/nubia-reader/shared/data-access/gamebook-library": [

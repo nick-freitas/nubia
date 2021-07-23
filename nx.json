@@ -55,6 +55,9 @@
       "tags": [],
       "implicitDependencies": ["nubia-reader"]
     },
+    "nubia-reader-gamebook-library-store": {
+      "tags": []
+    },
     "nubia-reader-home": {
       "tags": ["scope:reader"]
     },

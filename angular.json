@@ -284,6 +284,31 @@
         }
       }
     },
+    "nubia-reader-gamebook-library-store": {
+      "projectType": "library",
+      "root": "libs/nubia-reader/gamebook-library-store",
+      "sourceRoot": "libs/nubia-reader/gamebook-library-store/src",
+      "prefix": "nubia",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nubia-reader/gamebook-library-store"],
+          "options": {
+            "jestConfig": "libs/nubia-reader/gamebook-library-store/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/gamebook-library-store/src/**/*.ts",
+              "libs/nubia-reader/gamebook-library-store/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "nubia-reader-home": {
       "projectType": "library",
       "root": "libs/nubia-reader/home",
