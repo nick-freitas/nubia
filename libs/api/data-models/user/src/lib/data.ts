@@ -4,19 +4,22 @@ export const UserDB: User[] = [
   {
     id: '1',
     username: 'nfreitas',
-    password: 'test',
+    password: '$2y$12$nYlCTliMhLx0cwVcBTDKZON6UGEVqOfugbhNjkwsCraHg0Whwb1Ea',
     name: 'Nick Freitas',
+    gamebookLibraryIds: ['2', '4'],
   },
   {
     id: '2',
     username: 'gmelcher',
-    password: 'test',
+    password: '$2y$12$eywrE8YQuqJLxWrY2WS9wuo11jgTpifC3UrCIafNmIqI9HfGMmboa',
     name: 'Geena Melcher',
+    gamebookLibraryIds: ['1'],
   },
   {
     id: '3',
-    username: 'nb',
-    password: 'test',
+    username: 'nbellemsieh',
+    password: '$2y$12$sb1WeB8.xE6Pb6a2Q0Lhkuqaf1wdThz9zquXLs6tQxKDwp2om5oem',
     name: 'Naizak Bellemsieh',
+    gamebookLibraryIds: ['3'],
   },
 ];

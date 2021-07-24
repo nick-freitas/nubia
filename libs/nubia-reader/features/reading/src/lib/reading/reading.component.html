@@ -1,0 +1,18 @@
+<reader-header buttonName="Library" buttonLink="/book-shelf"></reader-header>
+
+<ng-container
+  *ngIf="loading$ | async; then loading; else loaded"
+></ng-container>
+
+<ng-template #loading> Loading... </ng-template>
+
+<ng-template #loaded>
+  <section
+    *ngIf="this.gamebook$ | async as gamebook; else noData"
+    fxLayout="row"
+  >
+    {{ gamebook | json }}
+  </section>
+
+  <ng-template #noData> Something went wrong </ng-template>
+</ng-template>

@@ -21,28 +21,23 @@
       "@nubia/api/data-models/gamebook": [
         "libs/api/data-models/gamebook/src/index.ts"
       ],
-      "@nubia/api/data-models/gamebook-library": [
-        "libs/api/data-models/gamebook-library/src/index.ts"
-      ],
       "@nubia/api/data-models/progression": [
         "libs/api/data-models/progression/src/index.ts"
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
-      "@nubia/nubia-reader/gamebook-library-store": [
-        "libs/nubia-reader/gamebook-library-store/src/index.ts"
+      "@nubia/api/reader-api": ["libs/api/reader-api/src/index.ts"],
+      "@nubia/nubia-reader/data-access/gamebook-library": [
+        "libs/nubia-reader/data-access/gamebook-library/src/index.ts"
       ],
-      "@nubia/nubia-reader/home": ["libs/nubia-reader/home/src/index.ts"],
-      "@nubia/nubia-reader/reading": ["libs/nubia-reader/reading/src/index.ts"],
-      "@nubia/nubia-reader/shared/data-access/gamebook-library": [
-        "libs/nubia-reader/shared/data-access/gamebook-library/src/index.ts"
+      "@nubia/nubia-reader/features/book-shelf": [
+        "libs/nubia-reader/features/book-shelf/src/index.ts"
       ],
-      "@nubia/nubia-reader/shared/tokens": [
-        "libs/nubia-reader/shared/tokens/src/index.ts"
-      ],
-      "@nubia/nubia-reader/shared/ui": [
-        "libs/nubia-reader/shared/ui/src/index.ts"
+      "@nubia/nubia-reader/features/reading": [
+        "libs/nubia-reader/features/reading/src/index.ts"
       ],
       "@nubia/nubia-reader/shell": ["libs/nubia-reader/shell/src/index.ts"],
+      "@nubia/nubia-reader/tokens": ["libs/nubia-reader/tokens/src/index.ts"],
+      "@nubia/nubia-reader/ui": ["libs/nubia-reader/ui/src/index.ts"],
       "@nubia/shared/api-interfaces": [
         "libs/shared/api-interfaces/src/index.ts"
       ]

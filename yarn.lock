@@ -173,6 +173,15 @@
   dependencies:
     tslib "^2.2.0"
 
+"@angular/cdk@^12.1.3":
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-12.1.3.tgz#716d1a20040adf1b41335f9f7b8bf961758de5e6"
+  integrity sha512-uCWHk/PjddNJsdrmexasphWGbf4kYtYyhUCSd4HEBrIDjYz166MTVSr3FHgn/s8/tlVou7uTnaEZM+ILWoe2iQ==
+  dependencies:
+    tslib "^2.2.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cdk@~12.0.0":
   version "12.0.6"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-12.0.6.tgz#bea895aace78b9498869ad82d83dd7b9bdfa2cd8"
@@ -247,6 +256,13 @@
   integrity sha512-+JvM9fNICKMdfXpaKR0zSWMrrMCp78N1056Di2/RxLxvycm/TegjHq0IXVqpY9hMccZXjjCTl0EUNVMFZ2mkcg==
   dependencies:
     tslib "^2.2.0"
+
+"@angular/flex-layout@^12.0.0-beta.34":
+  version "12.0.0-beta.34"
+  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-12.0.0-beta.34.tgz#24d83bf3f8e4eacb661b3b8f9f85b0102415ff30"
+  integrity sha512-nLwKovXpyG+/U3Lbmfwt+q4ARupxtbPmFTZD0Y8oItFAV6/Oh9l+QQsNQa2VhOHAOrVagyDwcEM+SePtB5EmrQ==
+  dependencies:
+    tslib "^2.1.0"
 
 "@angular/forms@^12.0.0":
   version "12.1.2"

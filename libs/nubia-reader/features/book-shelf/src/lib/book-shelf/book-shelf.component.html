@@ -1,0 +1,27 @@
+<reader-header buttonName="Store" buttonLink="#"></reader-header>
+
+<div class="book-shelf-container p-6">
+  <ng-container
+    *ngIf="loading$ | async; then loading; else loaded"
+  ></ng-container>
+
+  <ng-template #loading> Loading... </ng-template>
+
+  <ng-template #loaded>
+    <section
+      *ngIf="this.gamebooks$ | async as gamebookList; else noData"
+      fxLayout="row wrap"
+      fxLayoutGap="16px grid"
+    >
+      <nubia-book-shelf-book
+        *ngFor="let gamebook of gamebookList"
+        [book]="gamebook"
+        fxFlex="33%"
+        fxFlex.md="50%"
+        fxFlex.sm="100%"
+      ></nubia-book-shelf-book>
+    </section>
+
+    <ng-template #noData> No gamebooks </ng-template>
+  </ng-template>
+</div>

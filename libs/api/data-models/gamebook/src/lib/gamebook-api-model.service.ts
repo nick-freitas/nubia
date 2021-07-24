@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { Gamebook, PublicUser } from '@nubia/shared/api-interfaces';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { Gamebook } from '@nubia/shared/api-interfaces';
 import { UserApiModelService } from '@nubia/api/data-models/user';
 import { GamebookDB } from './data';
 
@@ -7,24 +7,50 @@ import { GamebookDB } from './data';
 export class GamebookApiModelService {
   constructor(private userApiModelService: UserApiModelService) {}
 
+  public async getLibraryGamebooks(userId: string): Promise<Array<Gamebook>> {
+    const libraryGamebookIds: string[] =
+      await this.userApiModelService.getGamebookIds(userId);
+
+    const authoredGamebookIds: string[] = (
+      await this.getByAuthorId(userId, false)
+    ).map((gb) => gb.id);
+
+    const libraryGamebooks = GamebookDB.filter(
+      (gb) =>
+        libraryGamebookIds.includes(gb.id) ||
+        authoredGamebookIds.includes(gb.id)
+    );
+
+    return this.gamebooksPopulatedWithAuthor(libraryGamebooks);
+  }
+
   public async getById(id: string): Promise<Gamebook | null> {
     const gb: Gamebook = GamebookDB.find((gb) => gb.id === id);
-    if (!gb) return null;
+    if (!gb) throw new NotFoundException();
 
-    const author: PublicUser = await this.userApiModelService.getPublicUserInfo(
-      gb.authorId
-    );
-    if (author) {
-      gb.author = author;
-    }
-
+    gb.author = await this.userApiModelService.getPublicUserInfo(gb.authorId);
     return gb;
   }
 
-  public async getByAuthorId(authorId: string): Promise<Gamebook[]> {
-    let gb = GamebookDB.filter((gb) => gb.authorId === authorId);
+  public async getByAuthorId(
+    authorId: string,
+    populateWithAuthor = true
+  ): Promise<Array<Gamebook>> {
+    const gamebooks = GamebookDB.filter((gb) => gb.authorId === authorId);
+    if (!gamebooks) throw new NotFoundException();
+
+    if (populateWithAuthor) {
+      return this.gamebooksPopulatedWithAuthor(gamebooks);
+    }
+
+    return gamebooks;
+  }
+
+  private async gamebooksPopulatedWithAuthor(
+    gamebooks: Array<Gamebook>
+  ): Promise<Array<Gamebook>> {
     const authorIds = [];
-    gb.forEach((gb) => {
+    gamebooks.forEach((gb) => {
       if (!authorIds.includes(gb.authorId)) {
         authorIds.push(gb.authorId);
       }
@@ -34,11 +60,25 @@ export class GamebookApiModelService {
       authorIds.map((aid) => this.userApiModelService.getPublicUserInfo(aid))
     );
 
-    gb = gb.map((gb) => ({
+    return gamebooks.map((gb) => ({
       ...gb,
       author: authors.find((a) => a.id === gb.authorId),
     }));
+  }
 
-    return gb;
+  public async userOwnsOrAuthoredTheGamebook(
+    gamebookId: string,
+    userId: string
+  ): Promise<boolean> {
+    if (await this.userApiModelService.getIsOwnedGamebok(userId, gamebookId)) {
+      return true;
+    }
+
+    const authorId = (await this.getById(gamebookId)).authorId;
+    if (authorId === userId) {
+      return true;
+    }
+
+    return false;
   }
 }

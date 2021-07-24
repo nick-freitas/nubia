@@ -6,9 +6,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EntityDataModule } from '@ngrx/data';
-import { nubiaReaderShellRoutes } from './routes';
-import { ApiUrlInjectionToken } from '@nubia/nubia-reader/shared/tokens';
+import { ApiUrlInjectionToken } from '@nubia/nubia-reader/tokens';
 import { HttpClientModule } from '@angular/common/http';
+import { nubiaReaderShellRoutes } from './routes';
 
 const routerOptions: ExtraOptions = {
   enableTracing: true,
@@ -24,7 +24,7 @@ export const entityMetadata: EntityMetadataMap = {
 
 const defaultDataServiceConfig = (ApiUrlInjectionToken: string) => {
   return {
-    root: `${ApiUrlInjectionToken}/gamebook-library`,
+    root: `${ApiUrlInjectionToken}/reader-api`,
     timeout: 3000, // request timeout
   };
 };

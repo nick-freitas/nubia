@@ -1,24 +1,58 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { Chapter } from '@nubia/shared/api-interfaces';
+import { GamebookApiModelService } from '@nubia/api/data-models/gamebook';
 import { ChapterDB } from './data';
 
 @Injectable()
 export class ChapterApiModelService {
-  public async getById(id: string): Promise<Chapter | null> {
-    return new Promise((res) => {
-      const chapter: Chapter = ChapterDB.find((c) => c.id === id);
-      if (!chapter) return res(null);
+  constructor(private gamebookApiModelService: GamebookApiModelService) {}
 
-      return res(chapter);
-    });
+  public async getStartingChapter(
+    gamebookId: string,
+    userId: string
+  ): Promise<Chapter> {
+    if (
+      !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(
+        gamebookId,
+        userId
+      )
+    ) {
+      throw new UnauthorizedException();
+    }
+
+    return ChapterDB.find(
+      (c) => c.gamebookId === gamebookId && c.isStartingChapter === true
+    );
   }
-  public async getByGamebookId(gamebookId: string): Promise<Chapter[]> {
-    return new Promise((res) => {
-      const chapters: Chapter[] = ChapterDB.filter(
-        (c) => c.gamebookId === gamebookId
-      );
 
-      return res(chapters);
-    });
+  public async getById(id: string, userId: string): Promise<Chapter> {
+    const chapter = ChapterDB.find((c) => c.id === id);
+
+    if (
+      !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(
+        chapter.gamebookId,
+        userId
+      )
+    ) {
+      throw new UnauthorizedException();
+    }
+
+    return chapter;
+  }
+
+  public async getByGamebookId(
+    gamebookId: string,
+    userId: string
+  ): Promise<Chapter[]> {
+    if (
+      !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(
+        gamebookId,
+        userId
+      )
+    ) {
+      throw new UnauthorizedException();
+    }
+
+    return ChapterDB.filter((c) => c.gamebookId === gamebookId);
   }
 }

@@ -8,12 +8,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -39,12 +43,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api"],
+          "outputs": [
+            "coverage/apps/api"
+          ],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -60,12 +68,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api/data-models/chapter/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/api/data-models/chapter/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/data-models/chapter"],
+          "outputs": [
+            "coverage/libs/api/data-models/chapter"
+          ],
           "options": {
             "jestConfig": "libs/api/data-models/chapter/jest.config.js",
             "passWithNoTests": true
@@ -81,37 +93,18 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api/data-models/gamebook/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/data-models/gamebook"],
-          "options": {
-            "jestConfig": "libs/api/data-models/gamebook/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-data-models-gamebook-library": {
-      "root": "libs/api/data-models/gamebook-library",
-      "sourceRoot": "libs/api/data-models/gamebook-library/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
             "lintFilePatterns": [
-              "libs/api/data-models/gamebook-library/**/*.ts"
+              "libs/api/data-models/gamebook/**/*.ts"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/data-models/gamebook-library"],
+          "outputs": [
+            "coverage/libs/api/data-models/gamebook"
+          ],
           "options": {
-            "jestConfig": "libs/api/data-models/gamebook-library/jest.config.js",
+            "jestConfig": "libs/api/data-models/gamebook/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -125,12 +118,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api/data-models/progression/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/api/data-models/progression/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/data-models/progression"],
+          "outputs": [
+            "coverage/libs/api/data-models/progression"
+          ],
           "options": {
             "jestConfig": "libs/api/data-models/progression/jest.config.js",
             "passWithNoTests": true
@@ -146,14 +143,43 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api/data-models/user/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/api/data-models/user/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/data-models/user"],
+          "outputs": [
+            "coverage/libs/api/data-models/user"
+          ],
           "options": {
             "jestConfig": "libs/api/data-models/user/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-reader-api": {
+      "root": "libs/api/reader-api",
+      "sourceRoot": "libs/api/reader-api/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/reader-api/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/api/reader-api"
+          ],
+          "options": {
+            "jestConfig": "libs/api/reader-api/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -167,7 +193,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "statsJson": true,
             "outputPath": "dist/apps/nubia-reader",
@@ -180,7 +208,9 @@
               "apps/nubia-reader/src/favicon.ico",
               "apps/nubia-reader/src/assets"
             ],
-            "styles": ["apps/nubia-reader/src/styles.scss"],
+            "styles": [
+              "apps/nubia-reader/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -250,10 +280,39 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/nubia-reader"],
+          "outputs": [
+            "coverage/apps/nubia-reader"
+          ],
           "options": {
             "jestConfig": "apps/nubia-reader/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nubia-reader-data-access-gamebook-library": {
+      "projectType": "library",
+      "root": "libs/nubia-reader/data-access/gamebook-library",
+      "sourceRoot": "libs/nubia-reader/data-access/gamebook-library/src",
+      "prefix": "nubia",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/nubia-reader/data-access/gamebook-library"
+          ],
+          "options": {
+            "jestConfig": "libs/nubia-reader/data-access/gamebook-library/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/data-access/gamebook-library/src/**/*.ts",
+              "libs/nubia-reader/data-access/gamebook-library/src/**/*.html"
+            ]
           }
         }
       }
@@ -279,99 +338,26 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/nubia-reader-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "nubia-reader-gamebook-library-store": {
-      "projectType": "library",
-      "root": "libs/nubia-reader/gamebook-library-store",
-      "sourceRoot": "libs/nubia-reader/gamebook-library-store/src",
-      "prefix": "nubia",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/nubia-reader/gamebook-library-store"],
-          "options": {
-            "jestConfig": "libs/nubia-reader/gamebook-library-store/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
             "lintFilePatterns": [
-              "libs/nubia-reader/gamebook-library-store/src/**/*.ts",
-              "libs/nubia-reader/gamebook-library-store/src/**/*.html"
+              "apps/nubia-reader-e2e/**/*.{js,ts}"
             ]
           }
         }
       }
     },
-    "nubia-reader-home": {
+    "nubia-reader-features-book-shelf": {
       "projectType": "library",
-      "root": "libs/nubia-reader/home",
-      "sourceRoot": "libs/nubia-reader/home/src",
-      "prefix": "nubia",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/nubia-reader/home"],
-          "options": {
-            "jestConfig": "libs/nubia-reader/home/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/nubia-reader/home/src/**/*.ts",
-              "libs/nubia-reader/home/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "nubia-reader-reading": {
-      "projectType": "library",
-      "root": "libs/nubia-reader/reading",
-      "sourceRoot": "libs/nubia-reader/reading/src",
-      "prefix": "nubia",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/nubia-reader/reading"],
-          "options": {
-            "jestConfig": "libs/nubia-reader/reading/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/nubia-reader/reading/src/**/*.ts",
-              "libs/nubia-reader/reading/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "nubia-reader-shared-data-access-gamebook-library": {
-      "projectType": "library",
-      "root": "libs/nubia-reader/shared/data-access/gamebook-library",
-      "sourceRoot": "libs/nubia-reader/shared/data-access/gamebook-library/src",
+      "root": "libs/nubia-reader/features/book-shelf",
+      "sourceRoot": "libs/nubia-reader/features/book-shelf/src",
       "prefix": "nubia",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/libs/nubia-reader/shared/data-access/gamebook-library"
+            "coverage/libs/nubia-reader/features/book-shelf"
           ],
           "options": {
-            "jestConfig": "libs/nubia-reader/shared/data-access/gamebook-library/jest.config.js",
+            "jestConfig": "libs/nubia-reader/features/book-shelf/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -379,43 +365,36 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/nubia-reader/shared/data-access/gamebook-library/src/**/*.ts",
-              "libs/nubia-reader/shared/data-access/gamebook-library/src/**/*.html"
+              "libs/nubia-reader/features/book-shelf/src/**/*.ts",
+              "libs/nubia-reader/features/book-shelf/src/**/*.html"
             ]
           }
         }
       }
     },
-    "nubia-reader-shared-tokens": {
-      "root": "libs/nubia-reader/shared/tokens",
-      "sourceRoot": "libs/nubia-reader/shared/tokens/src",
+    "nubia-reader-features-reading": {
       "projectType": "library",
+      "root": "libs/nubia-reader/features/reading",
+      "sourceRoot": "libs/nubia-reader/features/reading/src",
+      "prefix": "nubia",
       "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/nubia-reader/shared/tokens/**/*.ts"]
-          }
-        }
-      }
-    },
-    "nubia-reader-shared-ui": {
-      "root": "libs/nubia-reader/shared/ui",
-      "sourceRoot": "libs/nubia-reader/shared/ui/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/nubia-reader/shared/ui/**/*.ts"]
-          }
-        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/nubia-reader/shared/ui"],
+          "outputs": [
+            "coverage/libs/nubia-reader/features/reading"
+          ],
           "options": {
-            "jestConfig": "libs/nubia-reader/shared/ui/jest.config.js",
+            "jestConfig": "libs/nubia-reader/features/reading/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/features/reading/src/**/*.ts",
+              "libs/nubia-reader/features/reading/src/**/*.html"
+            ]
           }
         }
       }
@@ -428,7 +407,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/nubia-reader/shell"],
+          "outputs": [
+            "coverage/libs/nubia-reader/shell"
+          ],
           "options": {
             "jestConfig": "libs/nubia-reader/shell/jest.config.js",
             "passWithNoTests": true
@@ -445,6 +426,46 @@
         }
       }
     },
+    "nubia-reader-tokens": {
+      "root": "libs/nubia-reader/tokens",
+      "sourceRoot": "libs/nubia-reader/tokens/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/tokens/**/*.ts"
+            ]
+          }
+        }
+      }
+    },
+    "nubia-reader-ui": {
+      "root": "libs/nubia-reader/ui",
+      "sourceRoot": "libs/nubia-reader/ui/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/ui/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/nubia-reader/ui"
+          ],
+          "options": {
+            "jestConfig": "libs/nubia-reader/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "shared-api-interfaces": {
       "root": "libs/shared/api-interfaces",
       "sourceRoot": "libs/shared/api-interfaces/src",
@@ -453,7 +474,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/api-interfaces/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/api-interfaces/**/*.ts"
+            ]
           }
         }
       }

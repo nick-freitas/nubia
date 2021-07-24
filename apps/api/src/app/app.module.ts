@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { GamebookLibraryApiModelModule } from '@nubia/api/data-models/gamebook-library';
-import { GamebookApiModelModule } from '@nubia/api/data-models/gamebook';
+import { ApiReaderApiModule } from '@nubia/api/reader-api';
 
 @Module({
-  imports: [GamebookLibraryApiModelModule, GamebookApiModelModule],
+  imports: [ApiReaderApiModule],
   controllers: [AppController],
   providers: [AppService],
 })

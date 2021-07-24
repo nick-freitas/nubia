@@ -4,7 +4,7 @@ import { UserDB } from './data';
 
 @Injectable()
 export class UserApiModelService {
-  login(username: string, password: string): Promise<void> {
+  async login(username: string, password: string): Promise<void> {
     if (!username || !password) {
       throw new Error('Missing username or password');
     }
@@ -12,17 +12,24 @@ export class UserApiModelService {
     throw new Error('Not Yet Implemented');
   }
 
-  getPublicUserInfo(userId: string): Promise<PublicUser | null> {
-    return new Promise((res) => {
-      const user = UserDB.find((user) => user.id === userId);
-      if (!user) {
-        return res(null);
-      }
+  async getPublicUserInfo(userId: string): Promise<PublicUser | null> {
+    const { id, name }: PublicUser = UserDB?.find((user) => user.id === userId);
 
-      return res({
-        id: user?.id,
-        name: user?.name,
-      });
-    });
+    return { id, name };
+  }
+
+  async getGamebookIds(userId: string): Promise<Array<string>> {
+    return UserDB?.find((u) => u.id === userId)?.gamebookLibraryIds;
+  }
+
+  async getIsOwnedGamebok(
+    userId: string,
+    gamebookId: string
+  ): Promise<boolean> {
+    return (
+      UserDB?.findIndex(
+        (u) => u.id === userId && u.gamebookLibraryIds.includes(gamebookId)
+      ) !== -1
+    );
   }
 }

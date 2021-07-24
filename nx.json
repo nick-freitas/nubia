@@ -39,42 +39,39 @@
     "api-data-models-gamebook": {
       "tags": ["type:api-data-model", "scope:api"]
     },
-    "api-data-models-gamebook-library": {
-      "tags": []
-    },
     "api-data-models-progression": {
       "tags": ["type:api-data-model", "scope:api"]
     },
     "api-data-models-user": {
       "tags": ["type:api-data-model", "scope:api"]
     },
+    "api-reader-api": {
+      "tags": []
+    },
     "nubia-reader": {
       "tags": ["type:client-app", "scope:reader"]
+    },
+    "nubia-reader-data-access-gamebook-library": {
+      "tags": ["type:data-access", "scope:reader", "scope:api"]
     },
     "nubia-reader-e2e": {
       "tags": [],
       "implicitDependencies": ["nubia-reader"]
     },
-    "nubia-reader-gamebook-library-store": {
-      "tags": []
-    },
-    "nubia-reader-home": {
+    "nubia-reader-features-book-shelf": {
       "tags": ["scope:reader"]
     },
-    "nubia-reader-reading": {
+    "nubia-reader-features-reading": {
       "tags": ["scope:reader"]
-    },
-    "nubia-reader-shared-data-access-gamebook-library": {
-      "tags": ["type:data-access", "scope:reader", "scope:api"]
-    },
-    "nubia-reader-shared-tokens": {
-      "tags": []
-    },
-    "nubia-reader-shared-ui": {
-      "tags": []
     },
     "nubia-reader-shell": {
       "tags": ["type:shell", "scope:nubia-reader"]
+    },
+    "nubia-reader-tokens": {
+      "tags": []
+    },
+    "nubia-reader-ui": {
+      "tags": []
     },
     "shared-api-interfaces": {
       "tags": ["type:api-interface", "scope:shared"]
