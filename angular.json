@@ -160,6 +160,31 @@
         }
       }
     },
+    "api-db-client": {
+      "root": "libs/api/db-client",
+      "sourceRoot": "libs/api/db-client/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api/db-client/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/api/db-client"
+          ],
+          "options": {
+            "jestConfig": "libs/api/db-client/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "api-reader-api": {
       "root": "libs/api/reader-api",
       "sourceRoot": "libs/api/reader-api/src",

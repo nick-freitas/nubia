@@ -1,11 +1,14 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { Chapter } from '@nubia/shared/api-interfaces';
 import { GamebookApiModelService } from '@nubia/api/data-models/gamebook';
-import { ChapterDB } from './data';
+import { ApiDbClientService } from '@nubia/api/db-client';
 
 @Injectable()
 export class ChapterApiModelService {
-  constructor(private gamebookApiModelService: GamebookApiModelService) {}
+  constructor(
+    private gamebookApiModelService: GamebookApiModelService,
+    private readonly apiDbClientService: ApiDbClientService
+  ) {}
 
   public async getStartingChapter(
     gamebookId: string,
@@ -20,13 +23,15 @@ export class ChapterApiModelService {
       throw new UnauthorizedException();
     }
 
-    return ChapterDB.find(
-      (c) => c.gamebookId === gamebookId && c.isStartingChapter === true
-    );
+    return this.apiDbClientService.chapter.findFirst({
+      where: { AND: [{ gamebookId: gamebookId }, { isStartingChapter: true }] },
+    });
   }
 
   public async getById(id: string, userId: string): Promise<Chapter> {
-    const chapter = ChapterDB.find((c) => c.id === id);
+    const chapter = await this.apiDbClientService.chapter.findUnique({
+      where: { id: id },
+    });
 
     if (
       !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(
@@ -53,6 +58,8 @@ export class ChapterApiModelService {
       throw new UnauthorizedException();
     }
 
-    return ChapterDB.filter((c) => c.gamebookId === gamebookId);
+    return this.apiDbClientService.chapter.findMany({
+      where: { gamebookId: gamebookId },
+    });
   }
 }

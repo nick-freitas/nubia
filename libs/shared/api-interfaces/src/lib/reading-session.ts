@@ -1,9 +1,5 @@
-import { Progression } from './progression';
+import { ReadingSession as ReadingSessionModel } from '@prisma/client';
 
-export interface ReadingSession {
+export interface ReadingSession extends ReadingSessionModel {
   id: string;
-  userId: string;
-  gamebookId: string;
-  chapterId: string;
-  progressionStack: Progression[];
 }

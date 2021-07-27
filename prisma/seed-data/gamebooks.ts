@@ -1,10 +1,11 @@
-import { Gamebook } from '@nubia/shared/api-interfaces';
+import { Gamebook } from '@prisma/client';
 
 // https://blog.reedsy.com/book-cover-art/
-export const GamebookDB: Gamebook[] = [
+export const gamebooks: Gamebook[] = [
   {
     id: '1',
     title: 'The Crowned Siren',
+    description: '',
     authorId: '1',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/77/large_53231cccd61a70e22a3d1550ed4d10b1.jpg',
@@ -12,6 +13,7 @@ export const GamebookDB: Gamebook[] = [
   {
     id: '2',
     title: 'Death of Winged Shih Tzu',
+    description: '',
     authorId: '2',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/30/large_646fcb60ded755bf2223685537c84cd5.jpg',
@@ -19,6 +21,7 @@ export const GamebookDB: Gamebook[] = [
   {
     id: '3',
     title: 'My Kingdom of Thirst',
+    description: '',
     authorId: '1',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/68/large_19a00aea82e591aaa3ddb796479df0c5.jpg',
@@ -26,6 +29,7 @@ export const GamebookDB: Gamebook[] = [
   {
     id: '4',
     title: 'Abyss Raging',
+    description: '',
     authorId: '3',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/54/large_96b8a4d0c8e779a53c37eb7d8de6b3b9.jpg',
@@ -33,6 +37,7 @@ export const GamebookDB: Gamebook[] = [
   {
     id: '5',
     title: 'Shackle the Lie',
+    description: '',
     authorId: '1',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/15/large_5e8334bc54aa1520eefe2fcae5bab5bd.jpg',
@@ -40,6 +45,7 @@ export const GamebookDB: Gamebook[] = [
   {
     id: '6',
     title: 'Wanted for Pleasure',
+    description: '',
     authorId: '2',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/39/large_492210a4fadd8eb691b984e48bc77129.jpg',
@@ -47,6 +53,7 @@ export const GamebookDB: Gamebook[] = [
   {
     id: '7',
     title: 'A Touch of Fancy',
+    description: '',
     authorId: '2',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/41/large_a15e403f7a9b0685017153c473c841ce.jpg',

@@ -45,6 +45,9 @@
     "api-data-models-user": {
       "tags": ["type:api-data-model", "scope:api"]
     },
+    "api-db-client": {
+      "tags": []
+    },
     "api-reader-api": {
       "tags": []
     },

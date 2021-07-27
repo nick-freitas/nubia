@@ -29,7 +29,8 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "build:prod": "cross-env NODE_ENV=production ng build --configuration production"
+    "build:prod": "cross-env NODE_ENV=production ng build --configuration production",
+    "seed-db": "npx prisma migrate reset && ts-node ./prisma/seed.ts"
   },
   "private": true,
   "dependencies": {
@@ -53,6 +54,7 @@
     "@ngrx/router-store": "^12.0.0",
     "@ngrx/store": "^12.2.0",
     "@nrwl/angular": "12.5.8",
+    "@prisma/client": "2.27.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
@@ -91,7 +93,7 @@
     "autoprefixer": "^10.2.5",
     "cross-env": "^7.0.3",
     "cypress": "^7.3.0",
-    "dotenv": "8.2.0",
+    "dotenv": "^10.0.0",
     "eslint": "7.22.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
@@ -100,6 +102,7 @@
     "ngx-tailwind": "2.2.1",
     "postcss": "^8.2.15",
     "prettier": "^2.3.1",
+    "prisma": "2.27.0",
     "tailwindcss": "^2.1.2",
     "ts-jest": "27.0.3",
     "ts-node": "~9.1.1",

@@ -1,7 +1,4 @@
-export interface Progression {
+import { Progression as ProgressionModel } from '@prisma/client';
+export interface Progression extends ProgressionModel {
   id: string;
-  name?: string;
-  descriptor: string;
-  sourceChapterId?: string;
-  destinationChapterId?: string;
 }

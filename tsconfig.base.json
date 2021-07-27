@@ -25,6 +25,7 @@
         "libs/api/data-models/progression/src/index.ts"
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
+      "@nubia/api/db-client": ["libs/api/db-client/src/index.ts"],
       "@nubia/api/reader-api": ["libs/api/reader-api/src/index.ts"],
       "@nubia/nubia-reader/data-access/gamebook-library": [
         "libs/nubia-reader/data-access/gamebook-library/src/index.ts"

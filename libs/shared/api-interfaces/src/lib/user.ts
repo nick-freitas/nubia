@@ -1,12 +1,10 @@
+import { User as UserModel } from '@prisma/client';
+
 /**
  * private user record
  */
-export interface User {
+export interface User extends UserModel {
   id: string;
-  username: string;
-  password: string;
-  name: string;
-  gamebookLibraryIds: Array<string>;
 }
 
 /**
@@ -14,6 +12,5 @@ export interface User {
  * Name is the name or username if they have no name
  */
 export interface PublicUser {
-  id: string;
   name: string;
 }

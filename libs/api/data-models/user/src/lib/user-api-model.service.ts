@@ -1,10 +1,16 @@
 import { Injectable } from '@nestjs/common';
-import { PublicUser } from '@nubia/shared/api-interfaces';
-import { UserDB } from './data';
+import { PublicUser, User } from '@nubia/shared/api-interfaces';
+import { ApiDbClientService } from '@nubia/api/db-client';
 
 @Injectable()
 export class UserApiModelService {
-  async login(username: string, password: string): Promise<void> {
+  constructor(private readonly apiDbClientService: ApiDbClientService) {}
+
+  public async _getFullList(): Promise<User[]> {
+    return this.apiDbClientService.user.findMany();
+  }
+
+  public async login(username: string, password: string): Promise<void> {
     if (!username || !password) {
       throw new Error('Missing username or password');
     }
@@ -12,24 +18,20 @@ export class UserApiModelService {
     throw new Error('Not Yet Implemented');
   }
 
-  async getPublicUserInfo(userId: string): Promise<PublicUser | null> {
-    const { id, name }: PublicUser = UserDB?.find((user) => user.id === userId);
-
-    return { id, name };
+  public async getPublicUserInfo(userId: string): Promise<PublicUser | null> {
+    return this.apiDbClientService.user.findUnique({
+      where: { id: userId },
+      select: { id: true, name: true },
+    });
   }
 
-  async getGamebookIds(userId: string): Promise<Array<string>> {
-    return UserDB?.find((u) => u.id === userId)?.gamebookLibraryIds;
-  }
-
-  async getIsOwnedGamebok(
+  public async getIsOwnedGamebok(
     userId: string,
     gamebookId: string
   ): Promise<boolean> {
-    return (
-      UserDB?.findIndex(
-        (u) => u.id === userId && u.gamebookLibraryIds.includes(gamebookId)
-      ) !== -1
-    );
+    const gb = await this.apiDbClientService.gamebook.findFirst({
+      where: { AND: [{ id: gamebookId }, { authorId: userId }] },
+    });
+    return !!gb.id;
   }
 }

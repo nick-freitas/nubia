@@ -9,6 +9,11 @@ export class ApiReaderApiController {
   };
 
   constructor(private apiReaderApiService: ApiReaderApiService) {}
+  @Get()
+  async getAll() {
+    return this.apiReaderApiService.getAll();
+  }
+
   @Get('gamebooks')
   async getGamebookLibrary(): Promise<Array<Gamebook>> {
     const userId = this.getUserIdFromRequest();

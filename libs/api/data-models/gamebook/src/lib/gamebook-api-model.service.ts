@@ -1,69 +1,46 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Gamebook } from '@nubia/shared/api-interfaces';
 import { UserApiModelService } from '@nubia/api/data-models/user';
-import { GamebookDB } from './data';
+import { ApiDbClientService } from '@nubia/api/db-client';
 
 @Injectable()
 export class GamebookApiModelService {
-  constructor(private userApiModelService: UserApiModelService) {}
+  constructor(
+    private userApiModelService: UserApiModelService,
+    private readonly apiDbClientService: ApiDbClientService
+  ) {}
 
-  public async getLibraryGamebooks(userId: string): Promise<Array<Gamebook>> {
-    const libraryGamebookIds: string[] =
-      await this.userApiModelService.getGamebookIds(userId);
-
-    const authoredGamebookIds: string[] = (
-      await this.getByAuthorId(userId, false)
-    ).map((gb) => gb.id);
-
-    const libraryGamebooks = GamebookDB.filter(
-      (gb) =>
-        libraryGamebookIds.includes(gb.id) ||
-        authoredGamebookIds.includes(gb.id)
-    );
-
-    return this.gamebooksPopulatedWithAuthor(libraryGamebooks);
+  public async getLibraryGamebooks(
+    userId: string
+  ): Promise<Array<Partial<Gamebook>>> {
+    return this.apiDbClientService.gamebook.findMany({
+      where: {
+        OR: [{ ownedBy: { some: { id: userId } } }, { authorId: userId }],
+      },
+      select: {
+        id: true,
+        title: true,
+        imageSrc: true,
+        author: { select: { name: true } },
+      },
+    });
   }
 
   public async getById(id: string): Promise<Gamebook | null> {
-    const gb: Gamebook = GamebookDB.find((gb) => gb.id === id);
-    if (!gb) throw new NotFoundException();
-
-    gb.author = await this.userApiModelService.getPublicUserInfo(gb.authorId);
-    return gb;
+    return this.apiDbClientService.gamebook.findUnique({
+      where: { id: id },
+      include: { author: { select: { name: true } } },
+    });
   }
 
   public async getByAuthorId(
     authorId: string,
     populateWithAuthor = true
   ): Promise<Array<Gamebook>> {
-    const gamebooks = GamebookDB.filter((gb) => gb.authorId === authorId);
-    if (!gamebooks) throw new NotFoundException();
-
-    if (populateWithAuthor) {
-      return this.gamebooksPopulatedWithAuthor(gamebooks);
-    }
-
-    return gamebooks;
-  }
-
-  private async gamebooksPopulatedWithAuthor(
-    gamebooks: Array<Gamebook>
-  ): Promise<Array<Gamebook>> {
-    const authorIds = [];
-    gamebooks.forEach((gb) => {
-      if (!authorIds.includes(gb.authorId)) {
-        authorIds.push(gb.authorId);
-      }
+    return this.apiDbClientService.gamebook.findMany({
+      where: { authorId: authorId },
+      include: { author: populateWithAuthor && { select: { name: true } } },
     });
-
-    const authors = await Promise.all(
-      authorIds.map((aid) => this.userApiModelService.getPublicUserInfo(aid))
-    );
-
-    return gamebooks.map((gb) => ({
-      ...gb,
-      author: authors.find((a) => a.id === gb.authorId),
-    }));
   }
 
   public async userOwnsOrAuthoredTheGamebook(

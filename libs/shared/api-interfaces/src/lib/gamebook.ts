@@ -1,12 +1,7 @@
-import { Chapter } from './chapter';
+import { Gamebook as GamebookModel } from '@prisma/client';
 import { PublicUser } from './user';
 
-export interface Gamebook {
+export interface Gamebook extends GamebookModel {
   id: string;
-  title: string;
-  description?: string;
-  authorId: string;
-  author?: PublicUser;
-  imageSrc?: string;
-  chapters?: Chapter[];
+  author: PublicUser;
 }

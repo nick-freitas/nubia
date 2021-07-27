@@ -1,12 +1,5 @@
-import { Progression } from './progression';
+import { Chapter as ChapterModel } from '@prisma/client';
 
-export interface Chapter {
+export interface Chapter extends ChapterModel {
   id: string;
-  gamebookId: string;
-  isStartingChapter?: boolean;
-  isEndingChapter?: boolean;
-  title?: string;
-  content?: string;
-  inProgressions?: Progression[];
-  outProgressions?: Progression[];
 }
