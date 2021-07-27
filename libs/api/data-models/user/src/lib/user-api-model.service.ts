@@ -32,6 +32,6 @@ export class UserApiModelService {
     const gb = await this.apiDbClientService.gamebook.findFirst({
       where: { AND: [{ id: gamebookId }, { authorId: userId }] },
     });
-    return !!gb.id;
+    return !!gb?.id;
   }
 }

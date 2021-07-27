@@ -1,5 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { Gamebook } from '@nubia/shared/api-interfaces';
+import { ReadingSession } from '@prisma/client';
 import { ApiReaderApiService } from './api-reader-api.service';
 
 @Controller('reader-api')
@@ -15,7 +16,7 @@ export class ApiReaderApiController {
   }
 
   @Get('gamebooks')
-  async getGamebookLibrary(): Promise<Array<Gamebook>> {
+  async getGamebookLibrary(): Promise<Array<Partial<Gamebook>>> {
     const userId = this.getUserIdFromRequest();
     return this.apiReaderApiService.getGamebookLibrary(userId);
   }

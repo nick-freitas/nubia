@@ -18,6 +18,9 @@
       "@nubia/api/data-models/chapter": [
         "libs/api/data-models/chapter/src/index.ts"
       ],
+      "@nubia/api/data-models/reading-session": [
+        "libs/api/data-models/reading-session/src/index.ts"
+      ],
       "@nubia/api/data-models/gamebook": [
         "libs/api/data-models/gamebook/src/index.ts"
       ],

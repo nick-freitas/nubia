@@ -2,11 +2,13 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { Gamebook } from '@nubia/shared/api-interfaces';
 import { GamebookApiModelService } from '@nubia/api/data-models/gamebook';
 import { UserApiModelService } from '@nubia/api/data-models/user';
+import { ReadingSessionApiModelService } from '@nubia/api/data-models/reading-session';
 
 @Injectable()
 export class ApiReaderApiService {
   constructor(
     private gamebookApiModelService: GamebookApiModelService,
+    private readingSessionApiModelService: ReadingSessionApiModelService,
     private userApiModelService: UserApiModelService
   ) {}
 
@@ -14,7 +16,9 @@ export class ApiReaderApiService {
     return this.userApiModelService._getFullList();
   }
 
-  public async getGamebookLibrary(userId: string): Promise<Array<Gamebook>> {
+  public async getGamebookLibrary(
+    userId: string
+  ): Promise<Array<Partial<Gamebook>>> {
     return this.gamebookApiModelService.getLibraryGamebooks(userId);
   }
 
@@ -28,6 +32,13 @@ export class ApiReaderApiService {
       throw new UnauthorizedException();
     }
 
-    return this.gamebookApiModelService.getById(id);
+    const gamebook = await this.gamebookApiModelService.getById(id);
+    const readingSession =
+      await this.readingSessionApiModelService.getReadingSession(userId, id);
+
+    if (gamebook) {
+      gamebook.userReadingSession = readingSession;
+    }
+    return gamebook;
   }
 }
