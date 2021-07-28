@@ -11,7 +11,7 @@ import {
   providedIn: 'root',
 })
 export class LibraryDataAccessService {
-  libraryEntityService: EntityCollectionService<Gamebook>;
+  private libraryEntityService: EntityCollectionService<Gamebook>;
   loading$: Observable<boolean> | Store<boolean>;
   // entities$: Observable<Gamebook[]> | Store<Gamebook[]>;
 
@@ -28,6 +28,7 @@ export class LibraryDataAccessService {
   }
 
   getById(id: string): Observable<Gamebook> {
+    this.libraryEntityService.setLoading(true);
     return this.libraryEntityService.getByKey(id);
   }
 }

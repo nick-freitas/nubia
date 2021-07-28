@@ -2,14 +2,14 @@
   fxLayout="column"
   fxLayoutAlign="center center"
   class="hover:cursor-pointer hover:bg-gray-600 p-4"
-  matRipple
   [routerLink]="['/read', book?.id]"
+  matRipple
 >
-  <img [src]="book?.imageSrc" [alt]="" width="250" height="300" />
-  <span class="text-lg">{{ book?.title }}</span>
-  <span class="text-sm">{{ book?.author?.name }}</span>
+  <img [src]="book?.imageSrc" [alt]="" width="250" height="300" class="pb-2" />
+  <span class="mat-headline">{{ book?.title }}</span>
+  <span class="mat-subheading-2">by: {{ book?.author?.name }}</span>
   <!-- <span >{{ book?.description }}</span> -->
   <!-- <span>Chapters #s: {{ book?.chapters?.length }}</span> -->
 
-  <!-- <span class="text-xs">{{ book | json }}</span> -->
+  <!-- <span class="mat-small">{{ book | json }}</span> -->
 </div>

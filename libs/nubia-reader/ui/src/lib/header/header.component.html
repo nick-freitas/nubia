@@ -1,11 +1,14 @@
 <mat-toolbar fxLayoutAlign="space-between center" color="primary">
-  <a class="text-2xl"> Nubia Library </a>
-  <button
-    *ngIf="buttonName && buttonLink"
-    [routerLink]="buttonLink"
-    mat-flat-button
-    color="accent"
-  >
-    {{ buttonName }}
-  </button>
+  <a> Nubia Gamebooks </a>
+  <span class="page-tile">{{ pageTitle }}</span>
+  <div class="button-container">
+    <button
+      *ngIf="buttonName && buttonLink"
+      [routerLink]="buttonLink"
+      mat-flat-button
+      color="accent"
+    >
+      {{ buttonName }}
+    </button>
+  </div>
 </mat-toolbar>

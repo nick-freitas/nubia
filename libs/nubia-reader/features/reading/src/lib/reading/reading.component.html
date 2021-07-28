@@ -1,18 +1,33 @@
-<reader-header buttonName="Library" buttonLink="/book-shelf"></reader-header>
+<ng-container *ngIf="loading$ | async; then loading; else loaded">
+</ng-container>
 
-<ng-container
-  *ngIf="loading$ | async; then loading; else loaded"
-></ng-container>
+<ng-template #loading>
+  <reader-header
+    buttonName="Library"
+    pageTitle="Loading Gamebook"
+    buttonLink="/book-shelf"
+  ></reader-header>
+  <div>Loading...</div>
+</ng-template>
 
-<ng-template #loading> Loading... </ng-template>
+<ng-template #noData>
+  <reader-header
+    buttonName="Library"
+    pageTitle="Error Loading Gamebook"
+    buttonLink="/book-shelf"
+  ></reader-header>
+  <div>Something went wrong</div>
+</ng-template>
 
 <ng-template #loaded>
-  <section
-    *ngIf="this.gamebook$ | async as gamebook; else noData"
-    fxLayout="row"
-  >
-    <pre>{{ gamebook | json }}</pre>
-  </section>
-
-  <ng-template #noData> Something went wrong </ng-template>
+  <div *ngIf="this.gamebook$ | async as gamebook; else noData">
+    <reader-header
+      buttonName="Library"
+      [pageTitle]="gamebook.title + ' : ' + gamebook?.chapterToRead?.title"
+      buttonLink="/book-shelf"
+    ></reader-header>
+    <section fxLayout="row">
+      <pre>{{ gamebook | json }}</pre>
+    </section>
+  </div>
 </ng-template>

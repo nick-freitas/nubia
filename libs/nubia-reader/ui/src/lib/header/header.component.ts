@@ -7,6 +7,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+  @Input() pageTitle: string | undefined;
   @Input() buttonName: string | undefined;
   @Input() buttonLink: string | undefined;
 }
