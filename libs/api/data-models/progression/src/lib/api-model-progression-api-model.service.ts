@@ -3,9 +3,10 @@ import { Progression } from '@nubia/shared/api-interfaces';
 import { ApiDbClientService } from '@nubia/api/db-client';
 
 @Injectable()
-export class ApiModelProgressionApiModelService {
+export class ProgressionApiModelService {
   constructor(private readonly apiDbClientService: ApiDbClientService) {}
-  private async getProgressionsFromChapter(
+
+  public async getProgressionsFromChapter(
     chapterId: string
   ): Promise<Array<Progression>> {
     return this.apiDbClientService.progression.findMany({
@@ -13,7 +14,7 @@ export class ApiModelProgressionApiModelService {
     });
   }
 
-  private async getProgressionsToChapter(
+  public async getProgressionsToChapter(
     chapterId: string
   ): Promise<Array<Progression>> {
     return this.apiDbClientService.progression.findMany({

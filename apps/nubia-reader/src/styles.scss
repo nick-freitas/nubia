@@ -1,11 +1,94 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$deep-purple-palette: (
+  50: #ede7f6,
+  100: #d1c4e9,
+  200: #b39ddb,
+  300: #9575cd,
+  400: #7e57c2,
+  500: #673ab7,
+  600: #5e35b1,
+  700: #512da8,
+  800: #4527a0,
+  900: #311b92,
+  A100: #ffc895,
+  A200: #ed9766,
+  A400: #b7683a,
+  A700: #833c10,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$nubia-reader-primary: mat.define-palette($deep-purple-palette);
+$nubia-reader-accent: mat.define-palette(
+  $deep-purple-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$nubia-reader-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$nubia-reader-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $nubia-reader-primary,
+      accent: $nubia-reader-accent,
+      warn: $nubia-reader-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($nubia-reader-theme);
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 /* You can add global styles to this file, and also import other style files */
 
-body,
+// body,
+// html,
+// nubia-reader {
+//   height: 100%;
+//   margin: 0;
+// }
+
 html,
-nubia-reader {
+body {
   height: 100%;
+}
+body {
   margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }

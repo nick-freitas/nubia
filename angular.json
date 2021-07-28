@@ -73,27 +73,6 @@
         }
       }
     },
-    "api-data-models-reading-session": {
-      "root": "libs/api/data-models/reading-session",
-      "sourceRoot": "libs/api/data-models/reading-session/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/api/data-models/reading-session/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/data-models/reading-session"],
-          "options": {
-            "jestConfig": "libs/api/data-models/reading-session/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "api-data-models-gamebook": {
       "root": "libs/api/data-models/gamebook",
       "sourceRoot": "libs/api/data-models/gamebook/src",
@@ -131,6 +110,27 @@
           "outputs": ["coverage/libs/api/data-models/progression"],
           "options": {
             "jestConfig": "libs/api/data-models/progression/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-data-models-reading-session": {
+      "root": "libs/api/data-models/reading-session",
+      "sourceRoot": "libs/api/data-models/reading-session/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/data-models/reading-session/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/data-models/reading-session"],
+          "options": {
+            "jestConfig": "libs/api/data-models/reading-session/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -468,6 +468,19 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/shared/api-interfaces/**/*.ts"]
+          }
+        }
+      }
+    },
+    "shared-material-ui": {
+      "root": "libs/shared/material-ui",
+      "sourceRoot": "libs/shared/material-ui/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/material-ui/**/*.ts"]
           }
         }
       }

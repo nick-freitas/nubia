@@ -16,7 +16,11 @@ export class ReadingSessionApiModelService {
         where: { AND: [{ userId: userId }, { gamebookId: gamebookId }] },
       });
 
-    if (readingSession) return readingSession;
+    if (readingSession) {
+      readingSession.choicesObj = JSON.parse(readingSession.choices);
+      return readingSession;
+    }
+
     return this.createInitialReadingSession(userId, gamebookId);
   }
 
@@ -29,6 +33,7 @@ export class ReadingSessionApiModelService {
       userId: userId,
       gamebookId: gamebookId,
       choices: JSON.stringify([]),
+      choicesObj: [],
     };
   }
 }

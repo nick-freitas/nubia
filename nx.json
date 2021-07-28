@@ -36,13 +36,13 @@
     "api-data-models-chapter": {
       "tags": ["type:api-data-model", "scope:api"]
     },
-    "api-data-models-reading-session": {
-      "tags": ["type:api-data-model", "scope:api"]
-    },
     "api-data-models-gamebook": {
       "tags": ["type:api-data-model", "scope:api"]
     },
     "api-data-models-progression": {
+      "tags": ["type:api-data-model", "scope:api"]
+    },
+    "api-data-models-reading-session": {
       "tags": ["type:api-data-model", "scope:api"]
     },
     "api-data-models-user": {
@@ -81,6 +81,9 @@
     },
     "shared-api-interfaces": {
       "tags": ["type:api-interface", "scope:shared"]
+    },
+    "shared-material-ui": {
+      "tags": []
     }
   }
 }

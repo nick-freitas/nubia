@@ -11,7 +11,7 @@
     *ngIf="this.gamebook$ | async as gamebook; else noData"
     fxLayout="row"
   >
-    {{ gamebook | json }}
+    <pre>{{ gamebook | json }}</pre>
   </section>
 
   <ng-template #noData> Something went wrong </ng-template>
