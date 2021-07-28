@@ -9,5 +9,5 @@ export interface Gamebook extends GamebookModel {
   userReadingSession?: ReadingSession;
   chapterToRead?: Chapter;
   lastChapterRead?: Chapter;
-  progressionsFromChapter: Progression[];
+  progressionsFromChapter?: Progression[];
 }
