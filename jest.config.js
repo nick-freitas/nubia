@@ -15,5 +15,6 @@ module.exports = {
     '<rootDir>/libs/nubia-reader/features/reading',
     '<rootDir>/libs/api/reader-api',
     '<rootDir>/libs/api/db-client',
+    '<rootDir>/libs/api/auth',
   ],
 };

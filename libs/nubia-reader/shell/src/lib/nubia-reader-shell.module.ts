@@ -6,7 +6,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EntityDataModule } from '@ngrx/data';
-import { ApiUrlInjectionToken } from '@nubia/nubia-reader/tokens';
+import {
+  ApiUrlInjectionToken,
+  ReaderApiUrlInjectionToken,
+} from '@nubia/nubia-reader/tokens';
 import { HttpClientModule } from '@angular/common/http';
 import { nubiaReaderShellRoutes } from './routes';
 
@@ -22,9 +25,11 @@ export const entityMetadata: EntityMetadataMap = {
   },
 };
 
+const getReaderApiUrl = (ApiUrlInjectionToken: string) => `${ApiUrlInjectionToken}/reader-api`;
+
 const defaultDataServiceConfig = (ApiUrlInjectionToken: string) => {
   return {
-    root: `${ApiUrlInjectionToken}/reader-api`,
+    root: getReaderApiUrl(ApiUrlInjectionToken),
     timeout: 3000, // request timeout
   };
 };
@@ -40,6 +45,11 @@ const defaultDataServiceConfig = (ApiUrlInjectionToken: string) => {
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
+    {
+      provide: ReaderApiUrlInjectionToken,
+      useFactory: getReaderApiUrl,
+      deps: [ApiUrlInjectionToken]
+    },
     {
       provide: DefaultDataServiceConfig,
       useFactory: defaultDataServiceConfig,

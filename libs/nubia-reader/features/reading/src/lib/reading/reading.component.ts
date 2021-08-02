@@ -30,4 +30,20 @@ export class ReadingComponent implements OnInit {
       })
     );
   }
+
+  makeChoice(gamebookId: string, progressionId: string) {
+    this.gamebook$ = this.libraryDataAccessService.makeProgessionChoice(
+      gamebookId,
+      progressionId
+    );
+  }
+
+  resetChoices(gamebookId: string) {
+    this.gamebook$ = this.libraryDataAccessService.resetChoices(gamebookId);
+  }
+
+  goBack(gamebookId: string | undefined) {
+    if(!gamebookId) return;
+    this.gamebook$ = this.libraryDataAccessService.goBack(gamebookId);
+  }
 }

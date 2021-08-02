@@ -6,6 +6,12 @@ import { ApiDbClientService } from '@nubia/api/db-client';
 export class ProgressionApiModelService {
   constructor(private readonly apiDbClientService: ApiDbClientService) {}
 
+  public async getById(id: string): Promise<Progression | null> {
+    return this.apiDbClientService.progression.findUnique({
+      where: { id: id },
+    });
+  }
+
   public async getProgressionsFromChapter(
     chapterId: string
   ): Promise<Array<Progression>> {

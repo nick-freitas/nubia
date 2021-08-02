@@ -5,6 +5,7 @@ import { HeaderModule } from '@nubia/nubia-reader/ui';
 import { LibraryDataAccessModule } from '@nubia/nubia-reader/data-access/gamebook-library';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReadingComponent } from './reading/reading.component';
+import {MaterialUIModule} from '@nubia/shared/material-ui'
 
 export const nubiaReaderReadingRoutes: Route[] = [];
 
@@ -21,6 +22,7 @@ export const nubiaReaderReadingRoutes: Route[] = [];
     ]),
     HeaderModule,
     LibraryDataAccessModule,
+    MaterialUIModule
   ],
   declarations: [ReadingComponent],
 })

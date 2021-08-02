@@ -39,6 +39,7 @@ model Gamebook {
   description     String
   authorId        String
   imageSrc        String
+  price           Decimal          @db.Decimal(20, 2)
   author          User             @relation("authored_gamebooks", fields: [authorId], references: [id])
   chapters        Chapter[]
   ownedBy         User[]           @relation("owned_gamebooks")

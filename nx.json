@@ -33,6 +33,9 @@
     "api": {
       "tags": ["type:api-app", "scope:api"]
     },
+    "api-auth": {
+      "tags": []
+    },
     "api-data-models-chapter": {
       "tags": ["type:api-data-model", "scope:api"]
     },

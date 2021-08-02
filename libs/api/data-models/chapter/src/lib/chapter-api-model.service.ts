@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, ForbiddenException } from '@nestjs/common';
 import { Chapter } from '@nubia/shared/api-interfaces';
 import { GamebookApiModelService } from '@nubia/api/data-models/gamebook';
 import { ApiDbClientService } from '@nubia/api/db-client';
@@ -20,7 +20,7 @@ export class ChapterApiModelService {
         userId
       )
     ) {
-      throw new UnauthorizedException();
+      throw new ForbiddenException();
     }
 
     return this.apiDbClientService.chapter.findFirst({
@@ -39,7 +39,7 @@ export class ChapterApiModelService {
         userId
       )
     ) {
-      throw new UnauthorizedException();
+      throw new ForbiddenException();
     }
 
     return chapter;
@@ -55,7 +55,7 @@ export class ChapterApiModelService {
         userId
       )
     ) {
-      throw new UnauthorizedException();
+      throw new ForbiddenException();
     }
 
     return this.apiDbClientService.chapter.findMany({

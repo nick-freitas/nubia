@@ -1,4 +1,4 @@
-import { Gamebook } from '@prisma/client';
+import { Gamebook, Prisma } from '@prisma/client';
 
 // https://blog.reedsy.com/book-cover-art/
 export const gamebooks: Gamebook[] = [
@@ -6,6 +6,7 @@ export const gamebooks: Gamebook[] = [
     id: '1',
     title: 'The Crowned Siren',
     description: '',
+    price: new Prisma.Decimal(0.99),
     authorId: '1',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/77/large_53231cccd61a70e22a3d1550ed4d10b1.jpg',
@@ -14,6 +15,7 @@ export const gamebooks: Gamebook[] = [
     id: '2',
     title: 'Death of Winged Shih Tzu',
     description: '',
+    price: new Prisma.Decimal(0.99),
     authorId: '2',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/30/large_646fcb60ded755bf2223685537c84cd5.jpg',
@@ -22,6 +24,7 @@ export const gamebooks: Gamebook[] = [
     id: '3',
     title: 'My Kingdom of Thirst',
     description: '',
+    price: new Prisma.Decimal(0.99),
     authorId: '1',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/68/large_19a00aea82e591aaa3ddb796479df0c5.jpg',
@@ -30,6 +33,7 @@ export const gamebooks: Gamebook[] = [
     id: '4',
     title: 'Abyss Raging',
     description: '',
+    price: new Prisma.Decimal(0.99),
     authorId: '3',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/54/large_96b8a4d0c8e779a53c37eb7d8de6b3b9.jpg',
@@ -38,6 +42,7 @@ export const gamebooks: Gamebook[] = [
     id: '5',
     title: 'Shackle the Lie',
     description: '',
+    price: new Prisma.Decimal(0.99),
     authorId: '1',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/15/large_5e8334bc54aa1520eefe2fcae5bab5bd.jpg',
@@ -46,6 +51,7 @@ export const gamebooks: Gamebook[] = [
     id: '6',
     title: 'Wanted for Pleasure',
     description: '',
+    price: new Prisma.Decimal(0.99),
     authorId: '2',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/39/large_492210a4fadd8eb691b984e48bc77129.jpg',
@@ -54,6 +60,7 @@ export const gamebooks: Gamebook[] = [
     id: '7',
     title: 'A Touch of Fancy',
     description: '',
+    price: new Prisma.Decimal(0.99),
     authorId: '2',
     imageSrc:
       'https://blog-cdn.reedsy.com/directories/gallery/41/large_a15e403f7a9b0685017153c473c841ce.jpg',

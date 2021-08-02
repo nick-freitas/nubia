@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { PublicUser, User } from '@nubia/shared/api-interfaces';
 import { ApiDbClientService } from '@nubia/api/db-client';
 
@@ -10,12 +10,14 @@ export class UserApiModelService {
     return this.apiDbClientService.user.findMany();
   }
 
-  public async login(username: string, password: string): Promise<void> {
-    if (!username || !password) {
-      throw new Error('Missing username or password');
+  public async getFullUserByUserName(username: string): Promise<User | null> {
+    if (!username) {
+      throw new BadRequestException('Missing username');
     }
 
-    throw new Error('Not Yet Implemented');
+    return this.apiDbClientService.user.findFirst({
+      where: { username: username },
+    });
   }
 
   public async getPublicUserInfo(userId: string): Promise<PublicUser | null> {

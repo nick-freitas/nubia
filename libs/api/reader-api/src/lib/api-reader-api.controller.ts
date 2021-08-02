@@ -1,6 +1,5 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Post } from '@nestjs/common';
 import { Gamebook } from '@nubia/shared/api-interfaces';
-import { ReadingSession } from '@prisma/client';
 import { ApiReaderApiService } from './api-reader-api.service';
 
 @Controller('reader-api')
@@ -10,7 +9,7 @@ export class ApiReaderApiController {
   };
 
   constructor(private apiReaderApiService: ApiReaderApiService) {}
-  @Get()
+  @Get('dev-use-only/full-user-list')
   async getAll() {
     return this.apiReaderApiService.getAll();
   }
@@ -25,6 +24,35 @@ export class ApiReaderApiController {
   async getGamebook(@Param('id') id: string): Promise<Gamebook | null> {
     const userId = this.getUserIdFromRequest();
     return this.apiReaderApiService.getGamebook(id, userId);
+  }
+
+  @Post('gamebook/:gamebook_id/progression/:progression_id')
+  async makeProgressionChoice(
+    @Param('gamebook_id') gamebookId: string,
+    @Param('progression_id') progressionId: string
+  ): Promise<Gamebook | null> {
+    const userId = this.getUserIdFromRequest();
+    return this.apiReaderApiService.makeProgressionChoice(
+      userId,
+      gamebookId,
+      progressionId
+    );
+  }
+
+  @Post('gamebook/:gamebook_id/previous-choice')
+  async previousChoice(
+    @Param('gamebook_id') gamebookId: string
+  ): Promise<Gamebook | null> {
+    const userId = this.getUserIdFromRequest();
+    return this.apiReaderApiService.previousChoice(userId, gamebookId);
+  }
+
+  @Post('gamebook/:gamebook_id/reset-choices')
+  async resetChoices(
+    @Param('gamebook_id') gamebookId: string
+  ): Promise<Gamebook | null> {
+    const userId = this.getUserIdFromRequest();
+    return this.apiReaderApiService.resetChoices(userId, gamebookId);
   }
 
   private getUserIdFromRequest() {

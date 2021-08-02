@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
 import { Chapter, Gamebook } from '@nubia/shared/api-interfaces';
 import { GamebookApiModelService } from '@nubia/api/data-models/gamebook';
 import { ChapterApiModelService } from '@nubia/api/data-models/chapter';
@@ -21,10 +21,69 @@ export class ApiReaderApiService {
     return this.userApiModelService._getFullList();
   }
 
+  public async makeProgressionChoice(
+    userId: string,
+    gamebookId: string,
+    progressionId: string
+  ): Promise<Gamebook | null> {
+    if (
+      !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(
+        gamebookId,
+        userId
+      )
+    ) {
+      throw new ForbiddenException();
+    }
+
+    await this.readingSessionApiModelService.makeProgressionChoice(
+      userId,
+      gamebookId,
+      progressionId
+    );
+
+    return this.getGamebook(gamebookId, userId);
+  }
+
   public async getGamebookLibrary(
     userId: string
   ): Promise<Array<Partial<Gamebook>>> {
     return this.gamebookApiModelService.getLibraryGamebooks(userId);
+  }
+
+  public async previousChoice(
+    gamebookId: string,
+    userId: string
+  ): Promise<Gamebook | null> {
+    if (
+      !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(
+        gamebookId,
+        userId
+      )
+    ) {
+      throw new ForbiddenException();
+    }
+
+    await this.readingSessionApiModelService.previousChoice(userId, gamebookId);
+
+    return this.getGamebook(gamebookId, userId);
+  }
+
+  public async resetChoices(
+    gamebookId: string,
+    userId: string
+  ): Promise<Gamebook | null> {
+    if (
+      !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(
+        gamebookId,
+        userId
+      )
+    ) {
+      throw new ForbiddenException();
+    }
+
+    await this.readingSessionApiModelService.resetChoices(userId, gamebookId);
+
+    return this.getGamebook(gamebookId, userId);
   }
 
   public async getGamebook(
@@ -34,7 +93,7 @@ export class ApiReaderApiService {
     if (
       !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(id, userId)
     ) {
-      throw new UnauthorizedException();
+      throw new ForbiddenException();
     }
 
     const gamebook = await this.gamebookApiModelService.getById(id);

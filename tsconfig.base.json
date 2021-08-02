@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nubia/api/auth": ["libs/api/auth/src/index.ts"],
       "@nubia/api/data-models/chapter": [
         "libs/api/data-models/chapter/src/index.ts"
       ],
