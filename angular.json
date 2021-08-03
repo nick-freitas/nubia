@@ -371,6 +371,31 @@
         }
       }
     },
+    "nubia-reader-features-auth": {
+      "projectType": "library",
+      "root": "libs/nubia-reader/features/auth",
+      "sourceRoot": "libs/nubia-reader/features/auth/src",
+      "prefix": "nubia",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nubia-reader/features/auth"],
+          "options": {
+            "jestConfig": "libs/nubia-reader/features/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/nubia-reader/features/auth/src/**/*.ts",
+              "libs/nubia-reader/features/auth/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "nubia-reader-features-book-shelf": {
       "projectType": "library",
       "root": "libs/nubia-reader/features/book-shelf",

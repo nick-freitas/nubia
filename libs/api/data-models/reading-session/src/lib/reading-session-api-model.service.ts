@@ -40,7 +40,6 @@ export class ReadingSessionApiModelService {
     readingSession.choicesObj.unshift(userChoice);
     readingSession.choices = JSON.stringify(readingSession.choicesObj);
 
-    console.log(readingSession);
     await this.apiDbClientService.readingSession.update({
       where: { id: readingSession.id },
       data: { choices: readingSession.choices },

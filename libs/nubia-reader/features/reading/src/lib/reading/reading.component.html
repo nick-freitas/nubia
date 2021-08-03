@@ -10,17 +10,8 @@
   <div>Loading...</div>
 </ng-template>
 
-<ng-template #noData>
-  <reader-header
-    buttonName="Library"
-    pageTitle="Error Loading Gamebook"
-    buttonLink="/book-shelf"
-  ></reader-header>
-  <div>Something went wrong</div>
-</ng-template>
-
 <ng-template #loaded>
-  <div *ngIf="this.gamebook$ | async as gamebook; else noData">
+  <div *ngIf="this.gamebook$ | async as gamebook">
     <reader-header
       buttonName="Library"
       [pageTitle]="gamebook.title"

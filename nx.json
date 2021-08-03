@@ -67,6 +67,9 @@
       "tags": [],
       "implicitDependencies": ["nubia-reader"]
     },
+    "nubia-reader-features-auth": {
+      "tags": []
+    },
     "nubia-reader-features-book-shelf": {
       "tags": ["scope:reader"]
     },

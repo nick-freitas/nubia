@@ -34,6 +34,9 @@
       "@nubia/nubia-reader/data-access/gamebook-library": [
         "libs/nubia-reader/data-access/gamebook-library/src/index.ts"
       ],
+      "@nubia/nubia-reader/features/auth": [
+        "libs/nubia-reader/features/auth/src/index.ts"
+      ],
       "@nubia/nubia-reader/features/book-shelf": [
         "libs/nubia-reader/features/book-shelf/src/index.ts"
       ],
