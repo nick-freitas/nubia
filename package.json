@@ -66,6 +66,7 @@
     "bcrypt": "^5.0.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

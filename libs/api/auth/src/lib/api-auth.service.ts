@@ -15,8 +15,11 @@ export class ApiAuthService {
     username: string,
     _plaintextPassword: string
   ): Promise<Partial<User> | null> {
+    console.log(username, _plaintextPassword);
     const user = await this.userApiModelService.getFullUserByUserName(username);
     const match = await bcrypt.compare(_plaintextPassword, user.password);
+
+    console.log(match, user.password);
 
     if (!match) {
       throw new UnauthorizedException();

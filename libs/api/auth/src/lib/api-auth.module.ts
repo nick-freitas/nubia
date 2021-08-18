@@ -5,6 +5,7 @@ import { ApiAuthController } from './api-auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './constants';
 import { JwtStrategy } from './jwt.strategy';
+import { LocalStrategy } from './local.strategy';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { JwtStrategy } from './jwt.strategy';
     }),
   ],
   controllers: [ApiAuthController],
-  providers: [ApiAuthService, JwtStrategy],
+  providers: [ApiAuthService, LocalStrategy, JwtStrategy],
   exports: [ApiAuthService],
 })
 export class ApiAuthModule {}
