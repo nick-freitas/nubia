@@ -7,6 +7,16 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
+    - host: services.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka-service
+                port:
+                  number: 9092
     - host: nubia.dev
       http:
         paths:

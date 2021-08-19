@@ -17,12 +17,12 @@
          "path":"./library"
       },
       {
-         "name":"infra",
-         "path":"./infra"
-      },
-      {
          "name": "common",
          "path": "./common"
+      },
+      {
+         "name":"infra",
+         "path":"./infra"
       },
       {
          "name":"root",
