@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gamebook-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gamebook
+  template:
+    metadata:
+      labels:
+        app: gamebook
+    spec:
+      containers:
+        - name: gamebook
+          image: nickfrei/nubia.gamebook
+          env:
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_SECRET_KEY
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "2G"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gamebook-srv
+spec:
+  selector:
+    app: gamebook
+  ports:
+    - name: gamebook
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gamebook-postgres-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gamebook-postgres
+  template:
+    metadata:
+      labels:
+        app: gamebook-postgres
+    spec:
+      containers:
+        - name: gamebook-postgres
+          image: postgres
+          env:
+            - name: POSTGRES_DB
+              value: db
+            - name: POSTGRES_HOST_AUTH_METHOD
+              value: trust
+          resources:
+              limits:
+                cpu: "500m"
+                memory: "2G"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gamebook-postgres-srv
+spec:
+  selector:
+    app: gamebook-postgres
+  ports:
+    - name: gamebook-db
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gamebook-postgres
+data:
+  POSTGRES_DB: postgresdb
+  POSTGRES_USER: postgresadmin
+  POSTGRES_PASSWORD: admin123

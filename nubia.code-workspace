@@ -1,0 +1,28 @@
+{
+   "folders":[
+      {
+         "name":"api-gateway",
+         "path":"./api-gateway"
+      },
+      {
+         "name":"auth",
+         "path":"./auth"
+      },
+      {
+         "name":"gamebook",
+         "path":"./gamebook"
+      },
+      {
+         "name":"library",
+         "path":"./library"
+      },
+      {
+         "name":"infra",
+         "path":"./infra"
+      },
+      {
+         "name":"root",
+         "path":"."
+      }
+   ]
+}

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: library-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: library
+  template:
+    metadata:
+      labels:
+        app: library
+    spec:
+      containers:
+        - name: library
+          image: nickfrei/nubia.library
+          env:
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_SECRET_KEY
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "2G"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: library-srv
+spec:
+  selector:
+    app: library
+  ports:
+    - name: library
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
