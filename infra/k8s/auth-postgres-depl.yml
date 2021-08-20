@@ -17,7 +17,20 @@ spec:
           image: postgres
           env:
             - name: POSTGRES_DB
-              value: db
+              valueFrom:
+                configMapKeyRef:
+                  name: auth-postgres-config
+                  key: POSTGRESDB
+            - name: POSTGRES_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: auth-postgres-config
+                  key: POSTGRESUSER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: auth-postgres-config
+                  key: POSTGRESPASSWORD
             - name: POSTGRES_HOST_AUTH_METHOD
               value: trust
           resources:
@@ -41,8 +54,8 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: auth-postgres
+  name: auth-postgres-config
 data:
-  POSTGRES_DB: postgresdb
-  POSTGRES_USER: postgresadmin
-  POSTGRES_PASSWORD: admin123
+  POSTGRESDB: postgresdb
+  POSTGRESUSER: postgresadmin
+  POSTGRESPASSWORD: admin123

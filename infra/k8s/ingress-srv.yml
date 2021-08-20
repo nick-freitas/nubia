@@ -7,6 +7,16 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
+    - host: auth-db.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: auth-postgres-srv
+                port:
+                  number: 5432
     - host: kafka.nubia.dev
       http:
         paths:
