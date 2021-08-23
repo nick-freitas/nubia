@@ -1,0 +1,45 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: zookeeper-deployment-2
+spec:
+  selector:
+    matchLabels:
+      app: zookeeper-2
+  template:
+    metadata:
+      labels:
+        app: zookeeper-2
+    spec:
+      containers:
+      - name: zoo2
+        image: digitalwonderland/zookeeper
+        ports:
+        - containerPort: 2181
+        env:
+        - name: ZOOKEEPER_ID
+          value: "2"
+        - name: ZOOKEEPER_SERVER_2
+          value: zoo2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zoo2
+  labels:
+    app: zookeeper-2
+spec:
+  ports:
+  - name: client
+    port: 2182
+    protocol: TCP
+  - name: follower
+    port: 2889
+    protocol: TCP
+  - name: leader
+    port: 3889
+    protocol: TCP
+  selector:
+    app: zookeeper-2
+  type: LoadBalancer

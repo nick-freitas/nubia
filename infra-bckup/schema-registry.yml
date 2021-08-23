@@ -1,0 +1,52 @@
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schema-registry
+  labels:
+    app: schema-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schema-registry
+  template:
+    metadata:
+      labels:
+        app: schema-registry
+    spec:
+      containers:
+      - name: schema-registry
+        image: confluentinc/cp-schema-registry:5.3.0
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "1G"
+        ports:
+        - containerPort: 8081
+        imagePullPolicy: Always
+        env:
+        - name: SCHEMA_REGISTRY_HOST_NAME
+          value: schema-registry
+        - name: SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS
+          value: kafka2-service:9092
+        - name: SCHEMA_REGISTRY_LISTENERS
+          value: http://schema-registry-service:8081
+        command:
+        - bash
+        - -c
+        - unset SCHEMA_REGISTRY_PORT; /etc/confluent/docker/run
+---
+#Service:
+apiVersion: v1
+kind: Service
+metadata:
+  name: schema-registry-service
+  labels:
+    app: schema-registry
+spec:
+  selector:
+    app: schema-registry
+  ports:
+  - port: 8081
+  type: LoadBalancer

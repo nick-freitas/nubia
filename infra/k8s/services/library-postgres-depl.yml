@@ -17,20 +17,11 @@ spec:
           image: postgres
           env:
             - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: library-postgres-config
-                  key: POSTGRESDB
+              value: postgresdb
             - name: POSTGRES_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: library-postgres-config
-                  key: POSTGRESUSER
+              value: postgresadmin
             - name: POSTGRES_PASSWORD
-              valueFrom:
-                configMapKeyRef:
-                  name: library-postgres-config
-                  key: POSTGRESPASSWORD
+              value: admin123
             - name: POSTGRES_HOST_AUTH_METHOD
               value: trust
           resources:
@@ -50,12 +41,3 @@ spec:
       protocol: TCP
       port: 5432
       targetPort: 5432
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: library-postgres-config
-data:
-  POSTGRESDB: postgresdb
-  POSTGRESUSER: postgresadmin
-  POSTGRESPASSWORD: admin123

@@ -17,16 +17,66 @@ spec:
                 name: auth-postgres-srv
                 port:
                   number: 5432
-    - host: kafka.nubia.dev
+    - host: kafka1.nubia.dev
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: kafka-service
+                name: kafka1-service
+                port:
+                  number: 9091
+    - host: kafka2.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka2-service
                 port:
                   number: 9092
+    - host: kafka3.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka3-service
+                port:
+                  number: 9093
+    - host: kafka4.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka4-service
+                port:
+                  number: 9094
+    - host: kafka5.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka5-service
+                port:
+                  number: 9095
+    - host: kafka6.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka6-service
+                port:
+                  number: 9096
     - host: nubia.dev
       http:
         paths:
