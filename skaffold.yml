@@ -32,6 +32,22 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: nickfrei/nubia.chapter
+      context: chapter
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: nickfrei/nubia.reading-session
+      context: reading-session
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
     - image: nickfrei/nubia.api-gateway
       context: api-gateway
       docker:

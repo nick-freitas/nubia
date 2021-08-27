@@ -7,6 +7,10 @@
 
 [nubia.gamebook](https://github.com/nick-freitas/nubia.gamebook)
 
+[nubia.chapter](https://github.com/nick-freitas/nubia.chapter)
+
+[nubia.reading-session](https://github.com/nick-freitas/nubia.reading-session)
+
 [nubia.library](https://github.com/nick-freitas/nubia.library)
 
 [nubia.common](https://github.com/nick-freitas/nubia.common)
