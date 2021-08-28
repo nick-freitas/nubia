@@ -1,9 +1,12 @@
-FROM node:alpine
+FROM node
 
 WORKDIR /app
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
 COPY package.json .
-COPY decorate-angular-cli.js .
 RUN yarn
 COPY . .
 
-CMD ["yarn", "run", "dev:ssr"]
+CMD ["yarn", "start"]
