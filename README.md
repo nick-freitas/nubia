@@ -2,9 +2,9 @@
 
 ## Repos
 ### Clients
-[nubia.web-reader](https://github.com/nick-freitas/nubia.api-gateway)
+[nubia.web-reader](https://github.com/nick-freitas/nubia.web-reader)
 
-[nubia.web-reader](https://github.com/nick-freitas/nubia.auth)
+[nubia.web-editor](https://github.com/nick-freitas/nubia.web-editor)
 
 nubia.store
 
