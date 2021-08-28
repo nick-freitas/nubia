@@ -1,32 +1,44 @@
 {
    "folders":[
       {
-         "name":"Api Gateway",
+         "name":"Backend/Api Gateway",
          "path":"./api-gateway"
       },
       {
-         "name":"Auth",
+         "name":"Backend/Auth",
          "path":"./auth"
       },
       {
-         "name":"Gamebook",
+         "name":"Backend/Gamebook",
          "path":"./gamebook"
       },
       {
-         "name": "Chapter",
+         "name": "Backend/Chapter",
          "path": "./chapter"
       },
       {
-         "name":"Library",
+         "name": "Backend/Progression",
+         "path": "./progression"
+      },
+      {
+         "name":"Backend/Library",
          "path":"./library"
       },
       {
-         "name":"Reading Session",
+         "name":"Backend/Reading Session",
          "path":"./reading-session"
       },
       {
-         "name": "Common",
+         "name": "Backend/Common",
          "path": "./common"
+      },
+      {
+         "name": "Client/Reader",
+         "path": "./web-reader"
+      },
+      {
+         "name": "Client/Editor",
+         "path": "./web-editor"
       },
       {
          "name":"Infra",

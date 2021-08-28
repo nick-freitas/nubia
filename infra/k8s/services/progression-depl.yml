@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: progression-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: progression
+  template:
+    metadata:
+      labels:
+        app: progression
+    spec:
+      containers:
+        - name: progression
+          image: nickfrei/nubia.progression
+          env:
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_SECRET_KEY
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "2G"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: progression-srv
+spec:
+  selector:
+    app: progression
+  ports:
+    - name: progression
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

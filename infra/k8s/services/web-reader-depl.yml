@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-reader-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-reader
+  template:
+    metadata:
+      labels:
+        app: web-reader
+    spec:
+      containers:
+      - name: web-reader
+        image: nickfrei/nubia.web-reader
+        resources:
+          limits:
+            memory: "2G"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-reader-srv
+spec:
+  selector:
+    app: web-reader
+  ports:
+    - name: web-reader
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

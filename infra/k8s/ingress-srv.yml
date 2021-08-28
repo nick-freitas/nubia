@@ -77,6 +77,26 @@ spec:
                 name: kafka6-service
                 port:
                   number: 9096
+    - host: reader.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web-reader-srv
+                port: 
+                  number: 3000
+    - host: editor.nubia.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web-editor-srv
+                port: 
+                  number: 3000
     - host: nubia.dev
       http:
         paths:
