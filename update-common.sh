@@ -15,6 +15,8 @@ cd ../library
 yarn upgrade @indigobit/nubia.common --latest
 cd ../chapter
 yarn upgrade @indigobit/nubia.common --latest
+cd ../progression
+yarn upgrade @indigobit/nubia.common --latest
 cd ../reading-session
 yarn upgrade @indigobit/nubia.common --latest
 
