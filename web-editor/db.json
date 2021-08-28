@@ -1,0 +1,121 @@
+{
+  "Gamebooks": [
+    {
+      "id": 1,
+      "title": "Alice's Tabletop Adventure in Wonderland",
+      "description": "https://www.gutenberg.org/files/11/11-h/11-h.htm"
+    },
+    {
+      "title": "Legend of the Golden Witch; Umineko TableTop Module 1",
+      "description": "The Ushiromiya family's annual conference is starting soon, but this year they will have an extra person. An anonymous call came in detailing suspicious and illegal activities that will be occurring this conference. The captain has requested that you, Detective \"Detective Norman of the FBI\" of the Tokyo Police Department, go to the family's island of Rokkenjima to investigate. It should be a quick mission, just in time for you to go on that relaxing 2 week long vacation, but when a murder occurs in the middle of a hurricane that strands you on the island, it is up to you to stop the Golden Witch's Ritual. Can you get to the bottom of the supernatural forces that are in play? Or will you also accept the Golden Witch?",
+      "id": 2
+    },
+    {
+      "title": "Test 123",
+      "description": "This is a test one",
+      "id": 3
+    }
+  ],
+  "Chapters": [
+    {
+      "title": "A Second Chance",
+      "gamebookId": 1,
+      "id": 3,
+      "startingChapter": true
+    },
+    {
+      "title": "Test DCs",
+      "gamebookId": 1,
+      "id": 4,
+      "startingChapter": false
+    },
+    {
+      "gamebookId": 2,
+      "title": "Umineko TT Background",
+      "content": "<p>This module will follow a modified version of the Umineko TableTop System.</p>\n<p>Mechanics:&nbsp;</p>\n<ul>\n<li>When rolling, you will roll number of D6s equal to the value of your skill for that DC. Then count the number of rolls that 3 or more, those are your successes. Enter that number for the skill check.\n<ul>\n<li>Skill check prompts will be italizied and fonted like this in the module:</li>\n<li><span style=\"font-family: 'courier new', courier, monospace;\"><em>If you would like to try to pick open the box, Roll Locksmith</em></span></li>\n</ul>\n</li>\n<li>DCs will be structured like this:\n<ul>\n<li>1 - Easy</li>\n<li>2 - Average</li>\n<li>3 - Hard</li>\n<li>4 - Very Hard</li>\n<li>5 - Impossible</li>\n</ul>\n</li>\n</ul>\n<p>You will use this character sheet:</p>\n<ul>\n<li><strong>Name:</strong> Detective Norman Jayden of the FBI</li>\n<li><strong>Department:</strong> Tokyo Police Department</li>\n<li><strong>Starting Equipment:</strong>\n<ul>\n<li>Police Badge</li>\n<li>Flashlight</li>\n<li>Blacklight</li>\n<li>Notebook</li>\n<li>Fingerprint Pad / Fingerprint Paper</li>\n<li>Dust / Duster</li>\n</ul>\n</li>\n<li><strong>Skills:</strong><br />\n<ul>\n<li>Charm: 4</li>\n<li>Fitness: 3</li>\n<li>Hide: 4</li>\n<li>History: 4</li>\n<li>Listen: 4</li>\n<li>Locksmith: 3</li>\n<li>Medicine: 3</li>\n<li>Occult: 4</li>\n<li>Repair: 3</li>\n<li>Search: 3</li>\n</ul>\n</li>\n<li><strong>Health:</strong>\n<ul>\n<li>5 Health</li>\n<li>Regen 1 Health per night</li>\n</ul>\n</li>\n</ul>",
+      "id": 5,
+      "startingChapter": true
+    },
+    {
+      "title": "Module Background",
+      "gamebookId": 2,
+      "id": 6,
+      "content": "<p>This module takes place in early October of 1986 in the private island Rokkenjima owned by the Ushiromiya Family.</p>\n<p>You, Detective \"Detective Norman Jayden of the FBI\" of the Tokyo Police Force, have a 2 week long vacation coming up. Your department received a call a couple of nights ago warning of some illicit activities that were going on in the island. Your captain asked you to go to the island to take a look, give him a call to let him know if the information is credible or not, and then you head straight to your resort for some deserved R&amp;R. This should be a simple mission, you will arrive on the island in the afternoon of October 4th, and leave on the morning of October 6th.</p>\n<p>&nbsp;</p>\n<p>In addition to your standard starting equipment, you have a small notebook with information about the different people that are expected on the island.</p>\n<table style=\"border-collapse: collapse; width: 100%; height: 418px;\" border=\"1\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Name</td>\n<td style=\"width: 50.5391%; height: 22px;\">Description</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Battler</td>\n<td style=\"width: 50.5391%; height: 22px;\">Child;&nbsp;</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Eva</td>\n<td style=\"width: 50.5391%; height: 22px;\">&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Rosa</td>\n<td style=\"width: 50.5391%; height: 22px;\">&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Krauss</td>\n<td style=\"width: 50.5391%; height: 22px;\">&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Rudolf</td>\n<td style=\"width: 50.5391%; height: 22px;\">&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Hideyoshi</td>\n<td style=\"width: 50.5391%; height: 22px;\">&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Natsuhi</td>\n<td style=\"width: 50.5391%; height: 22px;\">&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Kyrie</td>\n<td style=\"width: 50.5391%; height: 22px;\">&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya George</td>\n<td style=\"width: 50.5391%; height: 22px;\">Child;&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Maria</td>\n<td style=\"width: 50.5391%; height: 22px;\">Child;&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Jessica</td>\n<td style=\"width: 50.5391%; height: 22px;\">Child;&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Ushiromya Kinzo</td>\n<td style=\"width: 50.5391%; height: 22px;\">&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Genji</td>\n<td style=\"width: 50.5391%; height: 22px;\">Servant;&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Shanon</td>\n<td style=\"width: 50.5391%; height: 22px;\">Servant;&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Kanon</td>\n<td style=\"width: 50.5391%; height: 22px;\">Servant;&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Gouda</td>\n<td style=\"width: 50.5391%; height: 22px;\">Servant;&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Nanjo</td>\n<td style=\"width: 50.5391%; height: 22px;\">Ushiromya Kinzo's Doctor;&nbsp;</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 9.63912%; height: 22px;\">Kumasawa</td>\n<td style=\"width: 50.5391%; height: 22px;\">Servant;&nbsp;</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>"
+    },
+    {
+      "title": "Arrival on the Island",
+      "gamebookId": 2,
+      "id": 7,
+      "content": "<p><em>October 4, 1986</em></p>\n<p>&nbsp;</p>\n<p>You are arrive at the Island of Rokkenjima. The private island of the Ushiromiya family. After 3 hours on the ocean, you are met with the sight of the beach and pier. Beyond the beach is rich folliage that extends as far as you can see, ascending up, flanked on both sides by cliffside. On the pier you see an older gentleman, with dark grey hard, standing tall looking towards you. He is dressed in a black suit, with a white pleated shirt, and a red bowtie. His attire is typical for servants of rich families, except for one noticeable difference. The left side of his jacket contains a large embroidery of a golden eagle.</p>\n<p>As you approach him, he welcomes to you to the island.</p>\n<p>\"Good afternoon Detective. It a pleasure to meet you. My name is Genji and I will be escorting you to the main mansion.\" says the man.</p>\n<p>\"Good aftenoon Genji. My name is Detective Norman Jayden of the FBI, pleased to meet you.\" you reply to the man as you grab your backpack containing your starting equipment and a small suitcase with a couple of days worth of clothing and toiletries, \"Please lead the way.\"</p>"
+    },
+    {
+      "title": "The Main Mansion",
+      "gamebookId": 2,
+      "id": 8,
+      "content": "<p>You arive at the main mansion</p>"
+    },
+    {
+      "title": "The Forest Walk",
+      "gamebookId": 2,
+      "id": 9
+    },
+    {
+      "title": "New Chapter",
+      "gamebookId": 2,
+      "id": 10
+    },
+    {
+      "gamebookId": 3,
+      "title": "Chapter One",
+      "content": "Once upon a time... (or, you meet each other in a tavern)",
+      "startingChapter": true,
+      "id": 11
+    }
+  ],
+  "Progressions": [
+    {
+      "gamebookId": 2,
+      "sourceChapterId": 5,
+      "destinationChapterId": 6,
+      "descriptor": "Continue",
+      "rollGuard": false,
+      "rollType": "",
+      "rollValue": null,
+      "id": 5
+    },
+    {
+      "gamebookId": 2,
+      "sourceChapterId": 6,
+      "destinationChapterId": 7,
+      "descriptor": "Start the Adventure",
+      "rollGuard": false,
+      "id": 6
+    },
+    {
+      "gamebookId": 2,
+      "sourceChapterId": 7,
+      "destinationChapterId": 8,
+      "descriptor": "Don't ask Genji any questions",
+      "rollGuard": false,
+      "id": 7
+    },
+    {
+      "gamebookId": 2,
+      "sourceChapterId": 7,
+      "destinationChapterId": 9,
+      "descriptor": "Ask Genji questions",
+      "rollGuard": false,
+      "id": 8
+    },
+    {
+      "gamebookId": 2,
+      "sourceChapterId": 9,
+      "destinationChapterId": 10,
+      "descriptor": "Keep going",
+      "rollGuard": false,
+      "id": 9,
+      "rollType": "",
+      "rollValue": ""
+    }
+  ]
+}

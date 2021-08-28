@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["airbnb-typescript/base", "prettier"],
+  "ignorePatterns": ["src/index.css", "tailwind.config.js"],
+  "rules": {
+    "quotes": [2, "single"],
+    "prettier/prettier": [
+      "error",
+      { "singleQuote": true, "endOfLine": "auto" }
+    ],
+    "max-len": [0, { "code": 180 }],
+    "import/extensions": "off"
+  }
+}
