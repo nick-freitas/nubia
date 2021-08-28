@@ -17,6 +17,8 @@ nubia.store
 
 [nubia.chapter](https://github.com/nick-freitas/nubia.chapter)
 
+[nubia.progression](https://github.com/nick-freitas/nubia.progression)
+
 [nubia.reading-session](https://github.com/nick-freitas/nubia.reading-session)
 
 [nubia.library](https://github.com/nick-freitas/nubia.library)
