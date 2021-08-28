@@ -1,0 +1,12 @@
+{
+  "name": "nubia.seeder",
+  "version": "0.0.1",
+  "description": "seed event source",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}

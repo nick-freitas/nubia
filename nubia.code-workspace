@@ -29,16 +29,16 @@
          "path":"./reading-session"
       },
       {
-         "name": "Backend/Common",
-         "path": "./common"
-      },
-      {
          "name": "Client/Reader",
          "path": "./web-reader"
       },
       {
          "name": "Client/Editor",
          "path": "./web-editor"
+      },
+      {
+         "name": "Common",
+         "path": "./common"
       },
       {
          "name":"Infra",
