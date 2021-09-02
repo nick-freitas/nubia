@@ -36,6 +36,12 @@ nubia.store
 kubectl create secret generic jwt-secret --from-literal=JWT_SECRET_KEY=FAKE_SECRET_KEY
 ``` 
 
+* Ingress Nginx
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.0/deploy/static/provider/cloud/deploy.yaml
+```
+
 * Install Dashboard
 
 ```

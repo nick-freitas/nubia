@@ -40,6 +40,14 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: nickfrei/nubia.progression
+      context: progression
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
     - image: nickfrei/nubia.reading-session
       context: reading-session
       docker:
