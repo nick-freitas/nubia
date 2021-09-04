@@ -44,7 +44,7 @@ export class ApiReaderApiController {
     @Param('gamebook_id') gamebookId: string
   ): Promise<Gamebook | null> {
     const userId = this.getUserIdFromRequest();
-    return this.apiReaderApiService.previousChoice(userId, gamebookId);
+    return this.apiReaderApiService.previousChoice(gamebookId, userId);
   }
 
   @Post('gamebook/:gamebook_id/reset-choices')
@@ -52,7 +52,7 @@ export class ApiReaderApiController {
     @Param('gamebook_id') gamebookId: string
   ): Promise<Gamebook | null> {
     const userId = this.getUserIdFromRequest();
-    return this.apiReaderApiService.resetChoices(userId, gamebookId);
+    return this.apiReaderApiService.resetChoices(gamebookId, userId);
   }
 
   private getUserIdFromRequest() {
