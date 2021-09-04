@@ -15,10 +15,12 @@ const http = axios.create({
   },
 });
 
+console.log("starting");
+
 // https://www.plot-generator.org.uk/
 async function main() {
   // Register the main admin user
-  await http.post(`/register`, {
+  await http.post(`/auth/register`, {
     email: config.admin.email,
     fullName: config.admin.fullName,
     password: config.registerPasswords,
@@ -28,7 +30,7 @@ async function main() {
     // Register the defined users
     const { access_token, id: adminUserId } = (
       await http.post<AuthorizedUser>(
-        `/register`,
+        `/auth/register`,
         {
           email: user.email,
           fullName: user.fullName,

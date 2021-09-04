@@ -45,6 +45,7 @@ var http = axios_1["default"].create({
         "Content-type": "application/json"
     }
 });
+console.log("starting");
 // https://www.plot-generator.org.uk/
 function main() {
     return __awaiter(this, void 0, void 0, function () {
@@ -53,7 +54,7 @@ function main() {
             switch (_a.label) {
                 case 0: 
                 // Register the main admin user
-                return [4 /*yield*/, http.post("/register", {
+                return [4 /*yield*/, http.post("/auth/register", {
                         email: config.admin.email,
                         fullName: config.admin.fullName,
                         password: config.registerPasswords
@@ -66,7 +67,7 @@ function main() {
                         var _this = this;
                         return __generator(this, function (_b) {
                             switch (_b.label) {
-                                case 0: return [4 /*yield*/, http.post("/register", {
+                                case 0: return [4 /*yield*/, http.post("/auth/register", {
                                         email: user.email,
                                         fullName: user.fullName,
                                         password: config.registerPasswords

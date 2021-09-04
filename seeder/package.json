@@ -4,7 +4,7 @@
   "description": "seed event source",
   "main": "index.js",
   "scripts": {
-    "start": "tsc ./index.ts --resolveJsonModule --lib es2015,dom"
+    "start": "tsc ./index.ts --resolveJsonModule --lib es2015,dom && node index.js"
   },
   "dependencies": {
     "@indigobit/nubia.common": "^0.1.57",

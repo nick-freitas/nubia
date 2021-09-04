@@ -45,6 +45,10 @@
          "path":"./infra"
       },
       {
+         "name":"Seeder",
+         "path":"./seeder"
+      },
+      {
          "name":"root",
          "path":"."
       }
