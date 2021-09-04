@@ -6,7 +6,11 @@ import { AppModule } from './app/app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     cors: {
-      origin: 'http://localhost:4200',
+      origin: [
+        'http://reader.nubia.wip:4200',
+        'http://editor.nubia.wip:4200',
+        'http://store.nubia.wip:4200',
+      ],
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       preflightContinue: false,
       optionsSuccessStatus: 204,

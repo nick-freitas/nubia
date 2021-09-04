@@ -82,8 +82,6 @@ export class ReadingSessionApiModelService {
     readingSession.choicesObj = [];
     readingSession.choices = JSON.stringify([]);
 
-    console.log(readingSession.id, readingSession.choices);
-
     await this.apiDbClientService.readingSession.update({
       where: { id: readingSession.id },
       data: { choices: readingSession.choices },
@@ -96,7 +94,6 @@ export class ReadingSessionApiModelService {
     userId: string,
     gamebookId: string
   ): Promise<ReadingSession> {
-    console.log(userId, gamebookId);
     const readingSession: ReadingSession =
       await this.apiDbClientService.readingSession.findFirst({
         where: { AND: [{ userId: userId }, { gamebookId: gamebookId }] },
