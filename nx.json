@@ -1,7 +1,7 @@
 {
   "npmScope": "nubia",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "old-monolith"
   },
   "implicitDependencies": {
     "package.json": {
