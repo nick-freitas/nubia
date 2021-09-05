@@ -1,29 +1,16 @@
-<mat-toolbar fxLayoutAlign="space-between center" color="primary">
-  <a> Nubia Gamebooks </a>
-  <div class="center-block" fxLayout="row" fxLayoutAlign="center center">
-    <span class="page-tile">{{ pageTitle }}</span>
-    <!-- <form [formGroup]="userSwitchForm" class="pl-4">
-      <mat-form-field appearance="outline">
-        <mat-label>User</mat-label>
-        <mat-select formControlName="user">
-          <mat-option
-            *ngFor="let user of userList$ | async"
-            [value]="user?.username"
-          >
-            {{ user?.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </form> -->
-  </div>
-  <div class="button-container">
-    <button
-      *ngIf="buttonName && buttonLink"
-      [routerLink]="buttonLink"
-      mat-flat-button
-      color="accent"
-    >
-      {{ buttonName }}
-    </button>
-  </div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a> Nubia Gamebooks </a>
+  </mat-toolbar-row>
+  <mat-toolbar-row fxLayoutAlign="start center" fxLayoutGap="1rem">
+    <a href="http://reader.nubia.wip:4201">
+      <button mat-stroked-button color="">Library (Reader)</button>
+    </a>
+    <a href="http://editor.nubia.wip:4202">
+      <button mat-stroked-button color="">Editor</button>
+    </a>
+    <a href="http://store.nubia.wip:4200" style="pointer-events: none">
+      <button mat-stroked-button color="" disabled>Store</button>
+    </a>
+  </mat-toolbar-row>
 </mat-toolbar>

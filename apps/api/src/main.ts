@@ -7,9 +7,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     cors: {
       origin: [
-        'http://reader.nubia.wip:4200',
-        'http://editor.nubia.wip:4200',
         'http://store.nubia.wip:4200',
+        'http://reader.nubia.wip:4201',
+        'http://editor.nubia.wip:4202',
       ],
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       preflightContinue: false,

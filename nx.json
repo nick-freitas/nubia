@@ -54,8 +54,18 @@
     "api-db-client": {
       "tags": []
     },
+    "api-editor-api": {
+      "tags": []
+    },
     "api-reader-api": {
       "tags": []
+    },
+    "nubia-editor": {
+      "tags": []
+    },
+    "nubia-editor-e2e": {
+      "tags": [],
+      "implicitDependencies": ["nubia-editor"]
     },
     "nubia-reader": {
       "tags": ["type:client-app", "scope:reader"]

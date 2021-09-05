@@ -199,6 +199,27 @@
         }
       }
     },
+    "api-editor-api": {
+      "root": "libs/api/editor-api",
+      "sourceRoot": "libs/api/editor-api/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/editor-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/editor-api"],
+          "options": {
+            "jestConfig": "libs/api/editor-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "api-reader-api": {
       "root": "libs/api/reader-api",
       "sourceRoot": "libs/api/reader-api/src",
@@ -216,6 +237,109 @@
           "options": {
             "jestConfig": "libs/api/reader-api/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nubia-editor": {
+      "root": "apps/nubia-editor",
+      "sourceRoot": "apps/nubia-editor/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/nubia-editor",
+            "index": "apps/nubia-editor/src/index.html",
+            "main": "apps/nubia-editor/src/main.tsx",
+            "polyfills": "apps/nubia-editor/src/polyfills.ts",
+            "tsConfig": "apps/nubia-editor/tsconfig.app.json",
+            "assets": [
+              "apps/nubia-editor/src/favicon.ico",
+              "apps/nubia-editor/src/assets"
+            ],
+            "styles": ["apps/nubia-editor/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/nubia-editor/src/environments/environment.ts",
+                  "with": "apps/nubia-editor/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "port": 4202,
+            "host": "editor.nubia.wip",
+            "buildTarget": "nubia-editor:build",
+            "hmr": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "nubia-editor:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/nubia-editor/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/nubia-editor"],
+          "options": {
+            "jestConfig": "apps/nubia-editor/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nubia-editor-e2e": {
+      "root": "apps/nubia-editor-e2e",
+      "sourceRoot": "apps/nubia-editor-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/nubia-editor-e2e/cypress.json",
+            "devServerTarget": "nubia-editor:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "nubia-editor:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/nubia-editor-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -289,6 +413,7 @@
           },
           "defaultConfiguration": "development",
           "options": {
+            "port": 4201,
             "host": "reader.nubia.wip",
             "watch": true,
             "browserTarget": "nubia-reader:build"
@@ -561,6 +686,20 @@
     },
     "@nrwl/angular:component": {
       "style": "scss"
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
     }
   },
   "defaultProject": "nubia-reader"
