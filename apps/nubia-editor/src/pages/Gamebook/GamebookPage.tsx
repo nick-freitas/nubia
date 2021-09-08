@@ -54,7 +54,7 @@ const GamebookPage = connect(mapStateToProps, {
   fetchProgressionsByGamebookId,
 })((props: GamebookPageProps) => {
   useEffect(() => {
-    const gamebookId = Number(props.match.params.id);
+    const gamebookId = props.match.params.id;
     props.fetchGamebook(gamebookId);
     props.fetchChapters(gamebookId);
   }, [props.match.params]);

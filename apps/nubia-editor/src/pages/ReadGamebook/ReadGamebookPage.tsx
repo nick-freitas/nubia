@@ -68,10 +68,8 @@ const ReadGamebookPage = connect(mapStateToProps, {
 })((props: ReadGamebookPageProps) => {
   useEffect(() => {
     props
-      .fetchGamebook(Number(props.match.params.gamebookId))
-      .then(() =>
-        props.fetchStartingChapter(Number(props.match.params.gamebookId))
-      )
+      .fetchGamebook(props.match.params.gamebookId)
+      .then(() => props.fetchStartingChapter(props.match.params.gamebookId))
       .then((chapter: ChapterModel) => {
         props.loadReadThrough(chapter);
       });
@@ -90,7 +88,7 @@ const ReadGamebookPage = connect(mapStateToProps, {
     goToTopOfPage();
   };
 
-  const goToChapter = (chapterId: number) => {
+  const goToChapter = (chapterId: string) => {
     const chapter = props.chapters.find((c) => c.id === chapterId);
     props.loadReadThrough(chapter);
     goToTopOfPage();

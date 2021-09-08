@@ -3,7 +3,7 @@ import ProgressionActionTypes from '../action-types/progression.action-types';
 import ProgressionModel from '../models/Progression.model';
 
 interface ProgressionState {
-  progressionsById: { [id: number]: ProgressionModel };
+  progressionsById: { [id: string]: ProgressionModel };
   progressions: ProgressionModel[];
 }
 
@@ -23,7 +23,7 @@ const ProgressionsLoadList = (state: ProgressionState, action: ActionParam) => {
   let newProgressions = [...state.progressions];
   const newProgressionsById = { ...state.progressionsById };
 
-  action.payload.forEach((progression: ProgressionModel) => {
+  action?.payload?.forEach((progression: ProgressionModel) => {
     if (newProgressionsById[progression.id]) {
       // existing, update it
       newProgressions = newProgressions.map((np) =>
@@ -31,8 +31,8 @@ const ProgressionsLoadList = (state: ProgressionState, action: ActionParam) => {
       );
     } else {
       // new, add it
-      newProgressions = [...newProgressions, progression].sort(
-        (a, b) => a.id - b.id
+      newProgressions = [...newProgressions, progression].sort((a, b) =>
+        a.id.localeCompare(b.id)
       );
     }
 
@@ -103,7 +103,7 @@ const ProgressionsDestroyMultiple = (
   state: ProgressionState,
   action: ActionParam
 ) => {
-  const newProgressionsById: { [id: number]: ProgressionModel } = {};
+  const newProgressionsById: { [id: string]: ProgressionModel } = {};
   const newProgressions: ProgressionModel[] = [];
 
   state.progressions.forEach((p) => {

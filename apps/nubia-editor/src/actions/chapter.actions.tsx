@@ -1,14 +1,14 @@
 import ChapterActionTypes from '../action-types/chapter.action-types';
-import ChapterModel from '../models/Chapter.model';
 import {
   destroyMultipleProgressionByDestinationChapterId,
   destroyMultipleProgressionBySourceChapterId,
 } from './progression.actions';
+import { Chapter as ChapterModel } from '@nubia/shared/api-interfaces';
 
 const apiUrl = 'http://localhost:3333/editor-api/';
 
-export const fetchChapters: (gamebookId: number) => any =
-  (gamebookId: number) => async (dispatch: (a: any) => any) => {
+export const fetchChapters: (gamebookId: string) => any =
+  (gamebookId: string) => async (dispatch: (a: any) => any) => {
     const res = await fetch(`${apiUrl}Chapters?gamebookId=${gamebookId}`);
 
     const chapters: ChapterModel[] = await res.json();
@@ -22,8 +22,8 @@ export const fetchChapters: (gamebookId: number) => any =
   };
 export type IFetchChapters = typeof fetchChapters;
 
-export const destroyChapter: (chapterId: number) => any =
-  (chapterId: number) => async (dispatch: (a: any) => any) => {
+export const destroyChapter: (chapterId: string) => any =
+  (chapterId: string) => async (dispatch: (a: any) => any) => {
     await fetch(`${apiUrl}Chapters/${chapterId}`, {
       method: 'DELETE',
     });
@@ -38,8 +38,8 @@ export const destroyChapter: (chapterId: number) => any =
   };
 export type IDestroyChapter = typeof destroyChapter;
 
-export const fetchStartingChapter: (gamebookId: number) => any =
-  (gamebookId: number) => async (dispatch: (a: any) => any) => {
+export const fetchStartingChapter: (gamebookId: string) => any =
+  (gamebookId: string) => async (dispatch: (a: any) => any) => {
     const res = await fetch(
       `${apiUrl}Chapters?gamebookId=${gamebookId}&startingChapter=${true}`
     );
@@ -56,8 +56,8 @@ export const fetchStartingChapter: (gamebookId: number) => any =
   };
 export type IFetchStartingChapter = typeof fetchStartingChapter;
 
-export const fetchChapter: (chapterId: number | undefined) => any =
-  (chapterId: number | undefined) => async (dispatch: (a: any) => any) => {
+export const fetchChapter: (chapterId: string | undefined) => any =
+  (chapterId: string | undefined) => async (dispatch: (a: any) => any) => {
     if (!chapterId) return;
     const res = await fetch(`${apiUrl}Chapters/${chapterId}`);
     const chapter: ChapterModel = await res.json();
@@ -82,10 +82,10 @@ export const selectChapter: (chapter: ChapterModel) => any =
 export type ISelectChapter = typeof selectChapter;
 
 export const updateChapter: (
-  chapterId: number,
+  chapterId: string,
   chapter: Partial<ChapterModel>
 ) => any =
-  (chapterId: number, chapter: Partial<ChapterModel>) =>
+  (chapterId: string, chapter: Partial<ChapterModel>) =>
   async (dispatch: (a: any) => any) => {
     const res = await fetch(`${apiUrl}Chapters/${chapterId}`, {
       method: 'PATCH',

@@ -3,8 +3,8 @@ import ProgressionModel from '../models/Progression.model';
 
 const apiUrl = 'http://localhost:3333/editor-api/';
 
-export const fetchProgressionsByGamebookId: (gamebookId: number) => any =
-  (gamebookId: number) => (dispatch: (a: any) => any) =>
+export const fetchProgressionsByGamebookId: (gamebookId: string) => any =
+  (gamebookId: string) => (dispatch: (a: any) => any) =>
     fetch(`${apiUrl}Progressions?gamebookId=${gamebookId}`)
       .then((res) => res.json())
       .then((progressions) => {
@@ -16,8 +16,8 @@ export const fetchProgressionsByGamebookId: (gamebookId: number) => any =
 export type IFetchProgressionsByGamebookId =
   typeof fetchProgressionsByGamebookId;
 
-export const fetchProgressionsBySourceChapterId: (chapterId: number) => any =
-  (chapterId: number) => (dispatch: (a: any) => any) => {
+export const fetchProgressionsBySourceChapterId: (chapterId: string) => any =
+  (chapterId: string) => (dispatch: (a: any) => any) => {
     fetch(`${apiUrl}Progressions?sourceChapterId=${chapterId}`)
       .then((res) => res.json())
       .then((progressions) => {
@@ -31,8 +31,8 @@ export type IFetchProgressionsBySourceChapterId =
   typeof fetchProgressionsBySourceChapterId;
 
 export const fetchProgressionsByDestinationChapterId: (
-  chapterId: number
-) => any = (chapterId: number) => (dispatch: (a: any) => any) => {
+  chapterId: string
+) => any = (chapterId: string) => (dispatch: (a: any) => any) => {
   fetch(`${apiUrl}Progressions?destinationChapterId=${chapterId}`)
     .then((res) => res.json())
     .then((progressions) => {
@@ -88,8 +88,8 @@ export const updateProgression: (
   };
 export type IUpdateProgression = typeof updateProgression;
 
-export const destroyProgression: (progressionId: number) => any =
-  (progressionId: number) => (dispatch: (a: any) => any) => {
+export const destroyProgression: (progressionId: string) => any =
+  (progressionId: string) => (dispatch: (a: any) => any) => {
     fetch(`${apiUrl}Progressions/${progressionId}`, {
       method: 'DELETE',
     }).then(() => {
@@ -102,8 +102,8 @@ export const destroyProgression: (progressionId: number) => any =
 export type IDestroyProgression = typeof destroyProgression;
 
 export const destroyMultipleProgressionBySourceChapterId: (
-  chapterId: number
-) => any = (chapterId: number) => (dispatch: (a: any) => any) =>
+  chapterId: string
+) => any = (chapterId: string) => (dispatch: (a: any) => any) =>
   fetch(`${apiUrl}Progressions?sourceChapterId=${chapterId}`)
     .then((res) => res.json())
     .then((progressions: ProgressionModel[]) =>
@@ -125,8 +125,8 @@ export type IDestroyMultipleProgressionBySourceChapterId =
   typeof destroyMultipleProgressionBySourceChapterId;
 
 export const destroyMultipleProgressionByDestinationChapterId: (
-  chapterId: number
-) => any = (chapterId: number) => (dispatch: (a: any) => any) => {
+  chapterId: string
+) => any = (chapterId: string) => (dispatch: (a: any) => any) => {
   fetch(`${apiUrl}Progressions?destinationChapterId=${chapterId}`)
     .then((res) => res.json())
     .then((progressions: ProgressionModel[]) =>

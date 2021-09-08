@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ApiReaderApiModule } from '@nubia/api/reader-api';
-import { EditorApiModule } from '@nubia/api/editor-api';
+import { EditorApiModule } from '@nubia/api/editor-api/editor-api-shell';
 import { ApiAuthModule } from '@nubia/api/auth';
 
 @Module({

@@ -18,6 +18,9 @@ module.exports = {
     '<rootDir>/libs/api/auth',
     '<rootDir>/libs/nubia-reader/features/auth',
     '<rootDir>/apps/nubia-editor',
-    '<rootDir>/libs/api/editor-api',
+    '<rootDir>/libs/api/editor-api/editor-api-shell',
+    '<rootDir>/libs/api/editor-api/editor-api-gamebook',
+    '<rootDir>/libs/api/editor-api/editor-api-chapter',
+    '<rootDir>/libs/api/editor-api/editor-api-progression',
   ],
 };

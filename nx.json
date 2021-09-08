@@ -54,7 +54,16 @@
     "api-db-client": {
       "tags": []
     },
-    "api-editor-api": {
+    "api-editor-api-editor-api-chapter": {
+      "tags": []
+    },
+    "api-editor-api-editor-api-gamebook": {
+      "tags": []
+    },
+    "api-editor-api-editor-api-progression": {
+      "tags": []
+    },
+    "api-editor-api-editor-api-shell": {
       "tags": []
     },
     "api-reader-api": {

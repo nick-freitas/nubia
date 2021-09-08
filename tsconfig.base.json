@@ -30,7 +30,18 @@
       ],
       "@nubia/api/data-models/user": ["libs/api/data-models/user/src/index.ts"],
       "@nubia/api/db-client": ["libs/api/db-client/src/index.ts"],
-      "@nubia/api/editor-api": ["libs/api/editor-api/src/index.ts"],
+      "@nubia/api/editor-api/editor-api-chapter": [
+        "libs/api/editor-api/editor-api-chapter/src/index.ts"
+      ],
+      "@nubia/api/editor-api/editor-api-gamebook": [
+        "libs/api/editor-api/editor-api-gamebook/src/index.ts"
+      ],
+      "@nubia/api/editor-api/editor-api-progression": [
+        "libs/api/editor-api/editor-api-progression/src/index.ts"
+      ],
+      "@nubia/api/editor-api/editor-api-shell": [
+        "libs/api/editor-api/editor-api-shell/src/index.ts"
+      ],
       "@nubia/api/reader-api": ["libs/api/reader-api/src/index.ts"],
       "@nubia/nubia-reader/data-access/gamebook-library": [
         "libs/nubia-reader/data-access/gamebook-library/src/index.ts"

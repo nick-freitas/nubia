@@ -1,13 +1,10 @@
-interface ProgressionModel {
-  id: number;
-  gamebookId: number;
-  sourceChapterId: number;
-  destinationChapterId: number;
-  descriptor: string;
-  startingChapter: boolean;
+import { Progression } from '@nubia/shared/api-interfaces';
+
+interface ProgressionModel extends Progression {
   rollGuard: boolean;
-  rollValue: number | null;
   rollType: string | null;
+  rollValue: number | null;
+  gamebookId: string;
 }
 
 export default ProgressionModel;

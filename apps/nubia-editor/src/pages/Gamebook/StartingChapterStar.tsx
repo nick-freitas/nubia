@@ -7,19 +7,19 @@ interface StartingChapterStarProps {
 }
 
 const StartingChapterStar = (props: StartingChapterStarProps) => {
-  const fill = props.chapter.startingChapter ? 'currentColor' : 'none';
-  const startingChapterId = props.chapters.find((c) => c.startingChapter)?.id;
+  const fill = props.chapter.isStartingChapter ? 'currentColor' : 'none';
+  const startingChapterId = props.chapters.find((c) => c.isStartingChapter)?.id;
 
   const onClick = (e: any) => {
     e.preventDefault();
-    if (!props.chapter.startingChapter) {
+    if (!props.chapter.isStartingChapter) {
       props.changeStartingChapter(props.chapter.id, startingChapterId);
     }
   };
 
   return (
     <i
-      className={!props.chapter.startingChapter ? 'cursor-pointer' : ''}
+      className={!props.chapter.isStartingChapter ? 'cursor-pointer' : ''}
       onClick={onClick}
     >
       <svg

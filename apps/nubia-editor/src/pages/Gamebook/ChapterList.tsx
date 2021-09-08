@@ -7,20 +7,24 @@ import { TrashIcon } from '../../core-components/Icons';
 interface ChapterListProps {
   destroyChapter: IDestroyChapter;
   updateChapter: IUpdateChapter;
-  gamebookId: number;
+  gamebookId: string;
   chapters: ChapterModel[];
 }
 
 const ChapterList = (props: ChapterListProps) => {
   const changeStartingChapter = async (
-    newStartingChapterId: number,
-    startingChapterId: number | undefined
+    newStartingChapterId: string,
+    startingChapterId: string | undefined
   ) => {
     if (startingChapterId) {
-      await props.updateChapter(startingChapterId, { startingChapter: false });
+      await props.updateChapter(startingChapterId, {
+        isStartingChapter: false,
+      });
     }
 
-    await props.updateChapter(newStartingChapterId, { startingChapter: true });
+    await props.updateChapter(newStartingChapterId, {
+      isStartingChapter: true,
+    });
   };
 
   return (

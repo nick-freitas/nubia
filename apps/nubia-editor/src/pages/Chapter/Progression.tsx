@@ -17,7 +17,7 @@ import ProgressionDcCheckViewEdit from './ProgressionDcCheckViewEdit';
 interface ProgressionProp {
   chapters: ChapterModel[];
   progression: ProgressionModel;
-  nextChapterId: number;
+  nextChapterId: string;
   destroyProgression: IDestroyProgression;
   updateProgression: IUpdateProgression;
 }

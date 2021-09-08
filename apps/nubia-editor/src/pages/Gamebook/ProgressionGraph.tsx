@@ -40,7 +40,7 @@ const ProgressionGraph = (props: ProgressionGraphProps) => {
         key: chapter.id,
         text: chapter.title,
         color: 'lightblue',
-        loc: `${chapter.id * 150} ${chapter.id * 150}`,
+        loc: `${10 * 150} ${10 * 150}`,
       })) || [];
 
     const edges =

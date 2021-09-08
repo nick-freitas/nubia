@@ -7,12 +7,12 @@ import ProgressionActionTypes from '../action-types/progression.action-types';
 
 const apiUrl = 'http://localhost:3333/editor-api/';
 const fetchGamebooksUrl = () => `${apiUrl}Gamebooks`;
-const fetchGamebookUrl = (gamebookId: string | number) =>
+const fetchGamebookUrl = (gamebookId: string) =>
   `${apiUrl}Gamebooks/${gamebookId}`;
-const destroyGamebookUrl = (gamebookId: string | number) =>
+const destroyGamebookUrl = (gamebookId: string) =>
   `${apiUrl}Gamebooks/${gamebookId}`;
 const createNewGamebookUrl = () => `${apiUrl}/Gamebooks`;
-const updateGamebookUrl = (gamebookId: string | number) =>
+const updateGamebookUrl = (gamebookId: string) =>
   `${apiUrl}Gamebooks/${gamebookId}`;
 
 export const fetchGamebooks: () => any = () => (dispatch: (a: any) => any) =>
@@ -26,8 +26,8 @@ export const fetchGamebooks: () => any = () => (dispatch: (a: any) => any) =>
     );
 export type IFetchGamebooks = typeof fetchGamebooks;
 
-export const fetchGamebook: (gamebookId: number) => any =
-  (gamebookId: number) => (dispatch: (a: any) => any) =>
+export const fetchGamebook: (gamebookId: string) => any =
+  (gamebookId: string) => (dispatch: (a: any) => any) =>
     fetch(fetchGamebookUrl(gamebookId))
       .then((res) => res.json())
       .then((gamebook) => {
@@ -38,8 +38,8 @@ export const fetchGamebook: (gamebookId: number) => any =
       });
 export type IFetchGamebook = typeof fetchGamebook;
 
-export const destroyGamebook: (gamebookId: number) => any =
-  (gamebookId: number) => (dispatch: (a: any) => any) =>
+export const destroyGamebook: (gamebookId: string) => any =
+  (gamebookId: string) => (dispatch: (a: any) => any) =>
     fetch(destroyGamebookUrl(gamebookId), {
       method: 'DELETE',
     })
@@ -91,7 +91,7 @@ export const createNewGamebook: (newGamebook: Partial<GamebookModel>) => any =
             title: 'Chapter One',
             content:
               'Once upon a time... (or, you meet each other in a tavern)',
-            startingChapter: true,
+            isStartingChapter: true,
           })
         );
       });

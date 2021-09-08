@@ -18,8 +18,8 @@ import DebugPrintObject from '../../core-components/DebugPrintObject';
 interface CreateNewChapterForProgressionFormProps {
   createChapter: typeof createChapter;
   createProgression: typeof createProgression;
-  gamebookId: number;
-  sourceChapterId: number;
+  gamebookId: string;
+  sourceChapterId: string;
 }
 
 const CreateNewChapterForProgressionForm = (

@@ -20,8 +20,8 @@ import { createProgression } from '../../actions/progression.actions';
 import DebugPrintObject from '../../core-components/DebugPrintObject';
 
 interface NewProgressionToAnExistingChapterFormProps {
-  gamebookId: number;
-  chapterId: number;
+  gamebookId: string;
+  chapterId: string;
   chapters: ChapterModel[];
   createProgression?: (chapter: Partial<ChapterModel>) => any;
   headerText: string;
@@ -33,7 +33,7 @@ const mapStateToProps = (state: any) => ({
 });
 
 const initialValue: {
-  chapter?: number;
+  chapter?: string;
   descriptor: string;
   rollGuard: boolean;
   rollType: string;
@@ -57,12 +57,10 @@ const NewProgressionToAnExistingChapterForm = connect(mapStateToProps, {
     onSubmit={async (values, { setSubmitting, resetForm }) => {
       const newProgression: Partial<ProgressionModel> = {
         gamebookId: props.gamebookId,
-        sourceChapterId: props.isGetHereFrom
-          ? Number(values.chapter)
-          : props.chapterId,
+        sourceChapterId: props.isGetHereFrom ? values.chapter : props.chapterId,
         destinationChapterId: props.isGetHereFrom
           ? props.chapterId
-          : Number(values.chapter),
+          : values.chapter,
         descriptor: values.descriptor,
         rollGuard: !!values.rollGuard,
         rollType: values.rollType,
