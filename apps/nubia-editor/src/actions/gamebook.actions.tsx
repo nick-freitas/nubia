@@ -6,14 +6,14 @@ import ChapterActionTypes from '../action-types/chapter.action-types';
 import ProgressionActionTypes from '../action-types/progression.action-types';
 
 const apiUrl = 'http://localhost:3333/editor-api/';
-const fetchGamebooksUrl = () => `${apiUrl}Gamebooks`;
+const fetchGamebooksUrl = () => `${apiUrl}gamebooks`;
 const fetchGamebookUrl = (gamebookId: string) =>
-  `${apiUrl}Gamebooks/${gamebookId}`;
+  `${apiUrl}gamebooks/${gamebookId}`;
 const destroyGamebookUrl = (gamebookId: string) =>
-  `${apiUrl}Gamebooks/${gamebookId}`;
-const createNewGamebookUrl = () => `${apiUrl}/Gamebooks`;
+  `${apiUrl}gamebooks/${gamebookId}`;
+const createNewGamebookUrl = () => `${apiUrl}gamebooks`;
 const updateGamebookUrl = (gamebookId: string) =>
-  `${apiUrl}Gamebooks/${gamebookId}`;
+  `${apiUrl}gamebooks/${gamebookId}`;
 
 export const fetchGamebooks: () => any = () => (dispatch: (a: any) => any) =>
   fetch(fetchGamebooksUrl())

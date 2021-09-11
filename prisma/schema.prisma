@@ -44,16 +44,19 @@ model Gamebook {
   chapters        Chapter[]
   ownedBy         User[]           @relation("owned_gamebooks")
   readingSessions ReadingSession[]
+  Progression     Progression[]    @relation("gamebook")
 }
 
 model Progression {
-  id                   String  @id @default(uuid())
+  id                   String   @id @default(uuid())
   name                 String
   descriptor           String
   sourceChapterId      String
   destinationChapterId String
-  destinationChapter   Chapter @relation("chapter_destination", fields: [destinationChapterId], references: [id])
-  sourceChapter        Chapter @relation("chapter_source", fields: [sourceChapterId], references: [id])
+  gamebookId           String
+  destinationChapter   Chapter  @relation("chapter_destination", fields: [destinationChapterId], references: [id])
+  sourceChapter        Chapter  @relation("chapter_source", fields: [sourceChapterId], references: [id])
+  gamebook             Gamebook @relation("gamebook", fields: [gamebookId], references: [id])
 }
 
 model ReadingSession {

@@ -9,6 +9,7 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
+import { Chapter } from '../../../../../shared/api-interfaces/src';
 import { ApiEditorApiEditorApiChapterService } from './api-editor-api-editor-api-chapter.service';
 
 @Controller('editor-api/chapters')
@@ -21,7 +22,7 @@ export class ApiEditorApiEditorApiChapterController {
   getChapters(
     @Query('gamebookId') gamebookId: string,
     @Query('startingChapter') startingChapter: boolean
-  ) {
+  ): Promise<Array<Chapter>> {
     const userId = this.getUserIdFromRequest();
     return this.apiEditorApiEditorApiChapterService.getChapters(
       userId,
@@ -31,13 +32,16 @@ export class ApiEditorApiEditorApiChapterController {
   }
 
   @Get(':id')
-  getById(@Param('id') id: string) {
+  getById(@Param('id') id: string): Promise<Chapter> {
     const userId = this.getUserIdFromRequest();
     return this.apiEditorApiEditorApiChapterService.getById(userId, id);
   }
 
   @Patch(':id')
-  partialUpdateChapter(@Param('id') id: string, @Body() body) {
+  partialUpdateChapter(
+    @Param('id') id: string,
+    @Body() body
+  ): Promise<Chapter> {
     const userId = this.getUserIdFromRequest();
     return this.apiEditorApiEditorApiChapterService.partialUpdateChapter(
       userId,
@@ -47,7 +51,7 @@ export class ApiEditorApiEditorApiChapterController {
   }
 
   @Put(':id')
-  fullUpdateChapter(@Param('id') id: string, @Body() body) {
+  fullUpdateChapter(@Param('id') id: string, @Body() body): Promise<Chapter> {
     const userId = this.getUserIdFromRequest();
     return this.apiEditorApiEditorApiChapterService.fullUpdateChapter(
       userId,
@@ -57,18 +61,18 @@ export class ApiEditorApiEditorApiChapterController {
   }
 
   @Post()
-  createChapter(@Body() body) {
+  createChapter(@Body() body): Promise<Chapter> {
     const userId = this.getUserIdFromRequest();
     return this.apiEditorApiEditorApiChapterService.createChapter(userId, body);
   }
 
   @Delete(':id')
-  deleteChapters(@Param('id') id: string) {
+  deleteChapters(@Param('id') id: string): Promise<Chapter> {
     const userId = this.getUserIdFromRequest();
     return this.apiEditorApiEditorApiChapterService.deleteChapters(userId, id);
   }
 
-  private getUserIdFromRequest() {
+  private getUserIdFromRequest(): string {
     return this._debugUser.sub;
   }
 

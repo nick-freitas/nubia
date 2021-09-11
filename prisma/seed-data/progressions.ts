@@ -4,6 +4,7 @@ import { chapters } from './chapters';
 const _progressions: {
   sourceChapterId: string;
   destinationChapterId: string;
+  gamebookId: string;
 }[] = [];
 
 for (let i = 0; i < chapters.length; i++) {
@@ -17,6 +18,7 @@ for (let i = 0; i < chapters.length; i++) {
     _progressions.push({
       sourceChapterId: current.id,
       destinationChapterId: next.id,
+      gamebookId: current.gamebookId,
     });
   }
 }

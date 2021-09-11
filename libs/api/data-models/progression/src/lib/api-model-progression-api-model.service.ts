@@ -12,6 +12,14 @@ export class ProgressionApiModelService {
     });
   }
 
+  public async getByGamebookId(
+    gamebookId: string
+  ): Promise<Array<Progression>> {
+    return this.apiDbClientService.progression.findMany({
+      where: { gamebookId: gamebookId },
+    });
+  }
+
   public async getProgressionsFromChapter(
     chapterId: string
   ): Promise<Array<Progression>> {

@@ -48,7 +48,17 @@ const ChapterHeaderCard = (props: ChapterHeaderCardProps) => {
     setState((prevState) => ({
       ...prevState,
       title: props.chapter.title,
-      // content: props.chapter.content,
+      content: {
+        blocks: [
+          {
+            type: 'header',
+            data: {
+              text: props.chapter.content,
+              level: 2,
+            },
+          },
+        ],
+      },
     }));
   }, [props.chapter]);
 

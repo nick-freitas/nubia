@@ -1,5 +1,5 @@
 import { Injectable, ForbiddenException } from '@nestjs/common';
-import { Chapter } from '@nubia/shared/api-interfaces';
+import { Chapter, Gamebook } from '@nubia/shared/api-interfaces';
 import { GamebookApiModelService } from '@nubia/api/data-models/gamebook';
 import { ApiDbClientService } from '@nubia/api/db-client';
 
@@ -29,6 +29,7 @@ export class ChapterApiModelService {
   }
 
   public async getById(id: string, userId: string): Promise<Chapter> {
+    console.log(id, userId);
     const chapter = await this.apiDbClientService.chapter.findUnique({
       where: { id: id },
     });
@@ -42,13 +43,14 @@ export class ChapterApiModelService {
       throw new ForbiddenException();
     }
 
+    console.log(chapter);
     return chapter;
   }
 
   public async getByGamebookId(
     gamebookId: string,
     userId: string
-  ): Promise<Chapter[]> {
+  ): Promise<Array<Chapter>> {
     if (
       !this.gamebookApiModelService.userOwnsOrAuthoredTheGamebook(
         gamebookId,
@@ -57,6 +59,8 @@ export class ChapterApiModelService {
     ) {
       throw new ForbiddenException();
     }
+
+    console.log(gamebookId);
 
     return this.apiDbClientService.chapter.findMany({
       where: { gamebookId: gamebookId },

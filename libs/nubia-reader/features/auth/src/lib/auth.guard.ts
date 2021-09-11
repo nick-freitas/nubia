@@ -8,28 +8,28 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import {User} from '@nubia/shared/api-interfaces';
+import { User } from '@nubia/shared/api-interfaces';
 import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authService:AuthService, private router: Router){}
+  constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> {
     return this.authService.user$.pipe(
-      map((user: User|null) => {
-        if(!user) {
+      map((user: User | null) => {
+        if (!user) {
           this.router.navigate(['/login']);
-          return false
-        };
+          return false;
+        }
 
         return true;
       })
-    )
+    );
   }
 }

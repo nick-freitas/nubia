@@ -23,6 +23,7 @@ const ProgressionsLoadList = (state: ProgressionState, action: ActionParam) => {
   let newProgressions = [...state.progressions];
   const newProgressionsById = { ...state.progressionsById };
 
+  console.log(action?.payload);
   action?.payload?.forEach((progression: ProgressionModel) => {
     if (newProgressionsById[progression.id]) {
       // existing, update it

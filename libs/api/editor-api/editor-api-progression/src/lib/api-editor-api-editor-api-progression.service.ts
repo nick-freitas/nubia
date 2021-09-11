@@ -6,7 +6,8 @@ export class ApiEditorApiEditorApiProgressionService {
   constructor(private progressionApiModelService: ProgressionApiModelService) {}
 
   getProgressions(userId, gamebookId, sourceChapterId, destinationChapterId) {
-    if (gamebookId) return this.progressionApiModelService.getById(gamebookId);
+    if (gamebookId)
+      return this.progressionApiModelService.getByGamebookId(gamebookId);
     if (sourceChapterId)
       return this.progressionApiModelService.getProgressionsFromChapter(
         sourceChapterId
